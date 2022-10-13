@@ -227,7 +227,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title[SSP models for chemical enrichment]{Flexibel models for chemical enrichment in cosmological hydrodynamical simulations}
+\title[Early massive accretion events in a MW-mass galaxy]{The influence of massive early merger events on the chemo-dynamics of galaxy discs}
 
 \author[T. Buck] {Tobias Buck$^{1,2}$\thanks{E-mail: tobias.buck@iwr-uni-heidelberg.de.de}, Aura Obreja$^{3}$, \etal \\  %Andrea V. Macci\`o$^{4,5}$, \etal \\
 %, Aaron A. Dutton$^{2}$, Andrea V. Macci\`o$^{2,1}$\\
@@ -238,8 +238,6 @@ $^3$Universit\"ats-Sternwarte M\"unchen, Scheinerstraße 1, D-81679 M\"unchen, G
 %$^4$New York University Abu Dhabi, PO Box 129188, Saadiyat Island, Abu Dhabi, United Arab Emirates\\
 %$^5$Max-Planck-Institut f\"ur Astronomie, K\"onigstuhl 17, 69117 Heidelberg, Germany\\
 }
-
-%@arxiver{radial_dist.pdf,msmv.pdf,r_min_vs_r_vir.pdf,Local_Group_prob.pdf}
 
 \setlength{\topmargin}{-1.2cm}
 
@@ -255,20 +253,14 @@ $^3$Universit\"ats-Sternwarte M\"unchen, Scheinerstraße 1, D-81679 M\"unchen, G
 
 
 \begin{abstract}
-some awesome text about the great models...
-
-In my opinion the big advantage with respect to previous implementations and studies (e.g. Wiersma EAGLE or Illustris) lies in the fact that we use tables which are synthesized a priori, marginalizing over uncertain model input parameters using chempy. E.g. we can use chempy to fix IMF slope, supernova mass ranges and SNIa rates such that the MW data is recovered and then use this set of yields for the cosmo sims.
-strong use case: 
-galactic archeology
-high-z CGM abundances
+awesome science! keep on reading and cite me! 
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \noindent
 \begin{keywords}
 
-Galaxy: structure --- galaxies:
-  evolution --- galaxies: kinematics and dynamics --- galaxies:
+Galaxy: structure --- Galaxy: evolution --- Galaxy: kinematics and dynamics --- galaxies:
   formation --- Galaxy: disk --- methods: numerical
  \end{keywords}
 
@@ -282,7 +274,7 @@ Galaxy: structure --- galaxies:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Method: Chemical evolution model} \label{sec:simulation}
+\section{Methods} \label{sec:simulation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%% FIGURE 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -301,41 +293,6 @@ Galaxy: structure --- galaxies:
 \vspace{-.35cm}
 \caption{The simple stellar population model parameters: The stellar initial mass function (IMF, left panel), the stellar lifetime function (upper right panel) and the SNIa delay time distribution function (lower right panel). In the left panel we compare different IMFs as indicated in the legend. For each IMF the coloured numbers indicate the mass fraction of star above $8 \Msun$ up to the assumed maximum mass of $100 \Msun$. The upper right panel compares stellar lifetimes as a function of stellar mass for models from \citet{Argast2000} for three different metallicities with a model from \citet{Raiteri1996} at solar metallicity. Gray dashed lines indicate the lifetime of an $8 \Msun$ star. The lower right panel shows the empirical SNIa delay time distribution \citep{Maoz2010} with parameters taken from \citet{Maoz2012} and \citet{MaozMannucci2012}. Gray data points show the observational data taken from \citet{Maoz2012}.}
 \label{fig:param1}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%% FIGURE 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}
-\begin{center}
-\begin{minipage}{.495\textwidth}
-\centering
-\includegraphics[width=\textwidth]{./plots/number}
-\includegraphics[width=\textwidth]{./plots/massloss}
-
-\end{minipage}
-\begin{minipage}{.495\textwidth}
-\centering
-\includegraphics[width=\textwidth]{./plots/yield_z_chieffi}
-\end{minipage}
-
-\end{center}
-\vspace{-.35cm}
-\caption{The simple stellar model predictions: The upper left panel shows the number of core-collapse supernova, SNIa and AGB stars as a function of time at solar metallicity assuming a fiducial Chabrier IMF (solid coloured lines) while gray dashed lines assume a Kroupa IMF. The lower left panel shows the corresponding mass fraction as a function of time of different components of the simple stellar population. The solid blue line shows the mass fraction in main sequence stars as a function of simple stellar population age assuming a Chabrier IMF while the dashed blue line assumes a Kroupa IMF. The red solid line shows the total mass loss of the population (assuming the Chabrier IMF) which is lower than the mass fraction of dying stars (orange line) by the amount of mass in stellar remnants (green line, e.g. stellar mass black holes or white dwarfs). Grau dashed lines show the mass loss for each individual channel (CC SN, AGB stars and SNIa). The two vertical dashed lines show the lifetime of a $100 \Msun$ star and the lifetime of the minimum mass star exploding as CC SN which we assumed to be of $8 \Msun$ here. The right hand panel shows the corresponding cumulative ejected SSP mass split into different elements for two different metallicities assuming stellar yields taken from \citet{Chieffi2004,Karakas2016,Seitenzahl2013}.}
-\label{fig:massloss}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%% FIGURE 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}
-\begin{center}
-\includegraphics[width=\textwidth]{./plots/yield_hist}
-\includegraphics[width=\textwidth]{./plots/yield_sources}
-\end{center}
-\vspace{-.35cm}
-\caption{Example tracks of traced elements. The upper panel shows the fractional element return of the whole SSP for 42 example elements (out of a total of 81 tracked elements) split into the three different channels of elements produced by CC SN (blue), AGB (green) stars and SNIa (orange). The histograms show the relative contribution of different processes to the total metal return of the SSP; e.g. CC SN and SNIa contribute equally to the production of iron. Negative values as e.g. for hydrogen indicate destruction/fusion of elements into higher mass elements. The four bottom panels show the element return of the SSP as a function of time for different elements as indicated in each panel. We split the total element return (gray line) into the three different channels showing the contribution by CC SN in blue, by AGB stars in green and by SNIa in orange.}
-\label{fig:yhist}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -387,33 +344,14 @@ Galaxy: structure --- galaxies:
 
 
 
-%%%%%%%%%%%%%%%%%% FIGURE 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}
-\begin{center}
-\includegraphics[width=\textwidth]{./plots/snia_yield_hist}
-\includegraphics[width=\textwidth]{./plots/snii_yield_hist}
-\includegraphics[width=\textwidth]{./plots/agb_yield_hist}
-\end{center}
-\vspace{-.35cm}
-\caption{IMF weighted relative differences between our fiducial yield set using CC SN yields from \citet{Chieffi2004}, AGB star yields from \citet{Karakas2016} and SNIa yields from \citet{Seitenzahl2013} and other yield sets implemented in Chempy as indicated in the legend. The top panel shows SNIa yields by \citet{Iwamoto1999,Thielemann2003} and the Illustris TNG yields (see text for more explanation). The two middle panels compare CC SN yields from \citet{Limongi2018,Nomoto2013,Portinari1998}. The bottom panel compares AGB yields by \citet{Ventura2013,Pignatari2016} and the Illustris TNG yields with our fiducial yield set. An additional comparison of CC S yields from \citet{Frischknecht2016}, West \& Heger (in prep.) and the Nugrid collaboration \citep{Ritter2018} is shown in Fig. \ref{fig:comparison1} in the appendix.}
-\label{fig:comparison}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Application: Cosmological Zoom-in Simulations} \label{sec:simulation}
+\section{Results} \label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Not sure, we get a high res version done until this paper will be submitted...
 Let's try g8.26e11
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results: Galactic chemical abundances}
-\label{sec:}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{some different elements [X/Fe] vs. [Fe/H]}
@@ -443,27 +381,15 @@ Our results are summarized as follows:
 \section*{acknowledgments}
 %\section*{Acknowledgments}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TB's contribution to this project was made possible by funding from the Carl Zeiss Foundation. TB gratefully acknowledges the Gauss Centre for Supercomputing e.V. (www.gauss-centre.eu) for funding this project by providing computing time on the GCS Supercomputer SuperMUC at Leibniz Supercomputing Centre (www.lrz.de).
-This research made use of the {\sc{pynbody}} \citet{pynbody} package to analyze the simulations and used the {\sc{python}} package {\sc{matplotlib}} \citep{matplotlib} to display all figures in this work. Data analysis for this work made intensive use of the {\sc{python}} library {\sc{SciPy}} \citep{scipy}, in particular {\sc{NumPy and IPython}} \citep{numpy,ipython}.
-This research was carried out on the High Performance Computing resources at New York University Abu Dhabi; Simulations have been performed on the ISAAC cluster of the Max-Planck-Institut f\"ur Astronomie at the Rechenzentrum in Garching and the DRACO cluster at the Rechenzentrum in Garching. We greatly appreciate the contributions of all these computing allocations.
+TB's contribution to this project was made possible by funding from the Carl Zeiss Foundation. TB gratefully acknowledges the Gauss Centre for Supercomputing e.V. (www.gauss-centre.eu) for funding this project by providing computing time on the GCS Supercomputer SuperMUC at Leibniz Supercomputing Centre (www.lrz.de). This research was carried out on the High Performance Computing resources at New York University Abu Dhabi.
+This research made use of the {\sc{pynbody}} \citet{pynbody} package to analyze the simulations and used the {\sc{python}} package {\sc{matplotlib}} \citep{matplotlib} to display all figures in this work. Data analysis for this work made intensive use of the {\sc{python}} library {\sc{SciPy}} \citep{scipy}, in particular {\sc{NumPy and IPython}} \citep{numpy,ipython}. The article has been typeset using showyourwork! by \citet{Luger2021}.
 
 
 \bibliography{astro-ph.bib}
 
-\appendix
+%\appendix
 
-\section{Additional CC SN yields}
-
-%%%%%%%%%%%%%%%%%% FIGURE A1 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}
-\begin{center}
-\includegraphics[width=\textwidth]{./plots/snii_alt_yield_hist}
-\end{center}
-\vspace{-.35cm}
-\caption{Same as Fig. \ref{fig:comparison} but this time comparing the CC SN yields from \citet{Frischknecht2016}, West \& Heger (in prep.) and from the Nugrid collaboration \citep{Ritter2018} to our fiducial yieldset.}
-\label{fig:comparison1}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Additional CC SN yields}
 
 \label{lastpage}
 \end{document}
