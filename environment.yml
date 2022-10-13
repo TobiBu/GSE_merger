@@ -2,7 +2,7 @@ dependencies:
   - pip=22.2.2
   - python=3.10.6
   - pip:
-      - numpy=1.22.4
+      - numpy==1.22.4
       - pickle
       - glob
       - seaborn
