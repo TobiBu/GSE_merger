@@ -42,7 +42,7 @@ plt.rcParams.update({
     "font.family": "Helvetica"
 })
 
-my_tree = ytree.load(paths.data / "tree_0/tree_0_0000.h5")
+my_tree = ytree.load(paths.data / "tree_0/tree_0.h5", method='YTree')
 
 star_ratio = []
 gas_ratio = []
