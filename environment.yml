@@ -1,7 +1,6 @@
 dependencies:
   - pip=22.2.2
   - python=3.10.6
-  - glob
   - pip:
       - numpy==1.22.4
       - matplotlib==3.4.3
