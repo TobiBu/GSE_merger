@@ -1,57 +1,469 @@
-% Define document class
-\documentclass[twocolumn]{aastex631}
-\usepackage{showyourwork}
+%% This is emulateapj reformatting of the AASTEX sample document
+%%
+%\documentclass[apj,twocolappendix,numberedappendix,appendixfloats]{emulateapj}
+\documentclass[useAMS,usenatbib]{mnras}
 
-% Begin!
+\usepackage{natbib}
+%\bibliographystyle{apj}
+\bibliographystyle{mnras}
+
+\usepackage{tabu,booktabs}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{xspace}
+
+\usepackage{longtable}
+\usepackage{threeparttablex}
+\usepackage{array}
+
+%\usepackage{pdflscape}
+
+%%%%% AUTHORS - PLACE YOUR OWN MACROS HERE %%%%%
+
+\def \etal {et~al.~}
+\newcommand{\MKN}[1]{{\color{blue}{\bf MKN}:~ #1}}
+
+\newcommand{\Rmax}{$R_{\rm max}$}
+\newcommand{\Vmax}{$V_{\rm max}$}
+\newcommand{\nPS}{$n_{\rm P\&S}$}
+\newcommand{\nEin}{$n_{\rm E}$}
+\newcommand{\amiga}{\texttt{AMIGA}}
+\newcommand{\ahf}{\texttt{AHF}}
+\newcommand{\mlapm}{\texttt{MLAPM}}
+\newcommand{\hMpc}{{\ifmmode{h^{-1}{\rm Mpc}}\else{$h^{-1}$Mpc}\fi}}
+\newcommand{\Mpc}{{\ifmmode{{\rm Mpc}}\else{Mpc}\fi}}
+\newcommand{\hkpc}{{\ifmmode{h^{-1}{\rm kpc}}\else{$h^{-1}$kpc}\fi}}
+\newcommand{\kpc}{{\ifmmode{ {\rm kpc} }\else{{\rm kpc}}\fi}}
+\newcommand{\kms}{{\ifmmode{ {\rm km\,s^{-1}} }\else{ ${\rm km\,s^{-1}}$ }\fi}}
+\newcommand{\hMsun}{{\ifmmode{h^{-1}{\rm {M_{\odot}}}}\else{$h^{-1}{\rm{M_{\odot}}}$}\fi}}
+\newcommand{\Msun}{{\ifmmode{{\rm M}_{\odot}}\else{${\rm M}_{\odot}$}\fi}}
+\newcommand{\Mhalo}{{\ifmmode{M_{\rm halo}}\else{$M_{\rm halo}$}\fi}}
+\newcommand{\Rvir}{{\ifmmode{R_{\rm vir}}\else{$R_{\rm vir}$}\fi}}
+\newcommand{\Mvir}{{\ifmmode{M_{\rm vir}}\else{$M_{\rm vir}$}\fi}}
+\newcommand{\Mstar}{{\ifmmode{M_{\rm star}}\else{$M_{\rm star}$}\fi}}
+\newcommand{\Vrot}{{\ifmmode{V_{\rm rot}}\else{$V_{\rm rot}$}\fi}}
+\newcommand{\ltsima}{$\; \buildrel < \over \sim \;$}
+\newcommand{\gtsima}{$\; \buildrel > \over \sim \;$}
+\newcommand{\lsim}{\lower.5ex\hbox{\ltsima}}
+\newcommand{\gsim}{\lower.5ex\hbox{\gtsima}}
+\def\nbody{$N$-body}
+\def\lesssim{\mathrel{\hbox{\rlap{\hbox{\lower4pt\hbox{$\sim$}}}\hbox{$<$}}}}
+\def\gtrsim{\mathrel{\hbox{\rlap{\hbox{\lower4pt\hbox{$\sim$}}}\hbox{$>$}}}}
+\newcommand{\new}[1]{\textbf{\textcolor{blue}{#1}}}
+\newcommand{\problem}[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand{\Sec}[1]{Section~\ref{#1}}
+\newcommand{\Eq}[1]{Eq.~(\ref{#1})}
+\newcommand{\Fig}[1]{Fig.~\ref{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\def\beqa{\begin{eqnarray}}
+\def\eeqa{\end{eqnarray}}
+\def\LCDM{\ensuremath{\Lambda}CDM}
+\def\LWDM{\ensuremath{\Lambda}WDM}
+\def\head{ \vbox to 0pt{\vss \hbox to 0pt{\hskip 440pt\rm
+      LA-UR-10-07069\hss} \vskip 25pt}}
+
+%%UNITS
+\def \kms {\ifmmode  \,\rm km\,s^{-1} \else $\,\rm km\,s^{-1}  $ \fi }
+\def \kpc {\ifmmode  {\rm kpc}  \else ${\rm  kpc}$ \fi  }  
+\def \hkpc {\ifmmode  {h^{-1}\rm kpc}  \else ${h^{-1}\rm kpc}$ \fi  }  
+\def \hMpc {\ifmmode  {h^{-1}\rm Mpc}  \else ${h^{-1}\rm Mpc}$ \fi  }  
+\def \Mpch {\ifmmode  {h^{-1}\rm Mpc}  \else ${h^{-1}\rm Mpc}$ \fi  }  
+\def \Msun {\ifmmode {\rm M}_{\odot} \else ${\rm M}_{\odot}$ \fi} 
+\def \hMsun {\ifmmode h^{-1}\,\rm M_{\odot} \else $h^{-1}\,\rm M_{\odot}$ \fi}
+
+%%COSMOLOGY
+\def \LCDM {\ifmmode \Lambda{\rm CDM} \else $\Lambda{\rm CDM}$ \fi}
+\def \sig8 {\ifmmode \sigma_8 \else $\sigma_8$ \fi} 
+\def \OmegaM {\ifmmode \Omega_{\rm m} \else $\Omega_{\rm m}$ \fi} 
+\def \Omegab {\ifmmode \Omega_{\rm b} \else $\Omega_{\rm b}$ \fi} 
+\def \OmegaL {\ifmmode \Omega_{\rm \Lambda} \else $\Omega_{\rm \Lambda}$\fi} 
+\def \Deltavir {\ifmmode \Delta_{\rm vir} \else $\Delta_{\rm vir}$ \fi}
+\def \rhocrit {\ifmmode \rho_{\rm crit} \else $\rho_{\rm crit}$ \fi}
+\def \rhou {\ifmmode \rho_{\rm u} \else $\rho_{\rm u}$ \fi}
+\def \zc {\ifmmode z_{\rm c} \else $z_{\rm c}$ \fi}
+
+\def\lcdm{\ensuremath{\Lambda\textrm{CDM}}\xspace}  
+\def\omegam{\ensuremath{\Omega_\textrm{m}}\xspace}
+\def\omegal{\ensuremath{\Omega_\Lambda}\xspace}
+\def\omegab{\ensuremath{\Omega_\textrm{b}}\xspace}
+\def\omegar{\ensuremath{\Omega_\textrm{r}}\xspace}
+%%%%% AUTHORS - PLACE YOUR OWN MACROS HERE %%%%%
+
+%\usepackage{tabu,booktabs}
+
+\def\aj{AJ}%
+         % Astronomical Journal
+\def\actaa{Acta Astron.}%
+         % Acta Astronomica
+\def\araa{ARA\&A}%
+         % Annual Review of Astron and Astrophys
+\def\apj{ApJ}%
+         % Astrophysical Journal
+\def\apjl{ApJ}%
+         % Astrophysical Journal, Letters
+\def\apjs{ApJS}%
+         % Astrophysical Journal, Supplement
+\def\ao{Appl.~Opt.}%
+         % Applied Optics
+\def\apss{Ap\&SS}%
+         % Astrophysics and Space Science
+\def\aap{A\&A}%
+         % Astronomy and Astrophysics
+\def\aapr{A\&A~Rev.}%
+         % Astronomy and Astrophysics Reviews
+\def\aaps{A\&AS}%
+         % Astronomy and Astrophysics, Supplement
+\def\azh{AZh}%
+         % Astronomicheskii Zhurnal
+\def\baas{BAAS}%
+         % Bulletin of the AAS
+\def\bac{Bull. astr. Inst. Czechosl.}%
+         % Bulletin of the Astronomical Institutes of Czechoslovakia
+\def\caa{Chinese Astron. Astrophys.}%
+         % Chinese Astronomy and Astrophysics
+\def\cjaa{Chinese J. Astron. Astrophys.}%
+         % Chinese Journal of Astronomy and Astrophysics
+\def\icarus{Icarus}%
+         % Icarus
+\def\jcap{J. Cosmology Astropart. Phys.}%
+         % Journal of Cosmology and Astroparticle Physics
+\def\jrasc{JRASC}%
+         % Journal of the RAS of Canada
+\def\mnras{MNRAS}%
+         % Monthly Notices of the RAS
+\def\memras{MmRAS}%
+         % Memoirs of the RAS
+\def\na{New A}%
+         % New Astronomy
+\def\nar{New A Rev.}%
+         % New Astronomy Review
+\def\pasa{PASA}%
+         % Publications of the Astron. Soc. of Australia
+\def\pra{Phys.~Rev.~A}%
+         % Physical Review A: General Physics
+\def\prb{Phys.~Rev.~B}%
+         % Physical Review B: Solid State
+\def\prc{Phys.~Rev.~C}%
+         % Physical Review C
+\def\prd{Phys.~Rev.~D}%
+         % Physical Review D
+\def\pre{Phys.~Rev.~E}%
+         % Physical Review E
+\def\prl{Phys.~Rev.~Lett.}%
+         % Physical Review Letters
+\def\pasp{PASP}%
+         % Publications of the ASP
+\def\pasj{PASJ}%
+         % Publications of the ASJ
+\def\qjras{QJRAS}%
+         % Quarterly Journal of the RAS
+\def\rmxaa{Rev. Mexicana Astron. Astrofis.}%
+         % Revista Mexicana de Astronomia y Astrofisica
+\def\skytel{S\&T}%
+         % Sky and Telescope
+\def\solphys{Sol.~Phys.}%
+         % Solar Physics
+\def\sovast{Soviet~Ast.}%
+         % Soviet Astronomy
+\def\ssr{Space~Sci.~Rev.}%
+         % Space Science Reviews
+\def\zap{ZAp}%
+         % Zeitschrift fuer Astrophysik
+\def\nat{Nature}%
+         % Nature
+\def\iaucirc{IAU~Circ.}%
+         % IAU Cirulars
+\def\aplett{Astrophys.~Lett.}%
+         % Astrophysics Letters
+\def\apspr{Astrophys.~Space~Phys.~Res.}%
+         % Astrophysics Space Physics Research
+\def\bain{Bull.~Astron.~Inst.~Netherlands}%
+         % Bulletin Astronomical Institute of the Netherlands
+\def\fcp{Fund.~Cosmic~Phys.}%
+         % Fundamental Cosmic Physics
+\def\gca{Geochim.~Cosmochim.~Acta}%
+         % Geochimica Cosmochimica Acta
+\def\grl{Geophys.~Res.~Lett.}%
+         % Geophysics Research Letters
+\def\jcp{J.~Chem.~Phys.}%
+         % Journal of Chemical Physics
+\def\jgr{J.~Geophys.~Res.}%
+         % Journal of Geophysics Research
+\def\jqsrt{J.~Quant.~Spec.~Radiat.~Transf.}%
+         % Journal of Quantitiative Spectroscopy and Radiative Trasfer
+\def\memsai{Mem.~Soc.~Astron.~Italiana}%
+         % Mem. Societa Astronomica Italiana
+\def\nphysa{Nucl.~Phys.~A}%
+         % Nuclear Physics A
+\def\physrep{Phys.~Rep.}%
+         % Physics Reports
+\def\physscr{Phys.~Scr}%
+         % Physica Scripta
+\def\planss{Planet.~Space~Sci.}%
+         % Planetary Space Science
+\def\procspie{Proc.~SPIE}%
+         % Proceedings of the SPIE
+
+%\newcommand\lcdm{\ifluatex \char"039B CDM\else\ifxetex\char"039B CDM \else%
+%    \ensuremath{$\Lambda$\textrm{CDM}}\fi\xspace}
+
+\def\head{ .ps \vbox to 0pt{\vss \hbox to 0pt{\hskip 440pt\rm
+      LA-UR-10-07069\hss} \vskip 25pt}} 
+
+\def \spose#1{\hbox  to 0pt{#1\hss}}  
+\def \lta{\mathrel{\spose{\lower 3pt\hbox{$\sim$}}\raise 2.0pt\hbox{$<$}}}
+\def \gta{\mathrel{\spose{\lower 3pt\hbox{$\sim$}}\raise 2.0pt\hbox{$>$}}}
+
+\def\lcdm{\ensuremath{\Lambda\textrm{CDM}}\xspace}
+    
+\def\omegam{\ensuremath{\Omega_\textrm{m}}\xspace}
+\def\omegal{\ensuremath{\Omega_\Lambda}\xspace}
+\def\omegab{\ensuremath{\Omega_\textrm{b}}\xspace}
+\def\omegar{\ensuremath{\Omega_\textrm{r}}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[SSP models for chemical enrichment]{Flexibel models for chemical enrichment in cosmological hydrodynamical simulations}
+
+\author[T. Buck] {Tobias Buck$^{1,2}$\thanks{E-mail: tobias.buck@iwr-uni-heidelberg.de.de}, Aura Obreja$^{3}$, \etal \\  %Andrea V. Macci\`o$^{4,5}$, \etal \\
+%, Aaron A. Dutton$^{2}$, Andrea V. Macci\`o$^{2,1}$\\
+%
+$^1$Universit\"at Heidelberg, Interdisziplin\"ares Zentrum f\"ur Wissenschaftliches Rechnen, Im Neuenheimer Feld 205, D-69120 Heidelberg, Germany\\
+$^2$Universit\"at Heidelberg, Zentrum f\"ur Astronomie, Institut f\"ur Theoretische Astrophysik, Albert-Ueberle-Straße 2, 69120 Heidelberg, Germany\\
+$^3$Universit\"ats-Sternwarte M\"unchen, Scheinerstraße 1, D-81679 M\"unchen, Germany%\\
+%$^4$New York University Abu Dhabi, PO Box 129188, Saadiyat Island, Abu Dhabi, United Arab Emirates\\
+%$^5$Max-Planck-Institut f\"ur Astronomie, K\"onigstuhl 17, 69117 Heidelberg, Germany\\
+}
+
+%@arxiver{radial_dist.pdf,msmv.pdf,r_min_vs_r_vir.pdf,Local_Group_prob.pdf}
+
+\setlength{\topmargin}{-1.2cm}
+
 \begin{document}
 
-% Title
-\title{An open source scientific article}
+\date{Accepted XXXX . Received XXXX; in original form XXXX}
 
-% Author list
-\author{@TobiBu}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{2020}
 
-% Abstract with filler text
+\maketitle
+
+\label{firstpage}
+
+
 \begin{abstract}
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-    Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
-    Curabitur dictum gravida mauris, consectetuer id, vulputate a, magna.
-    Donec vehicula augue eu neque, morbi tristique senectus et netus et.
-    Mauris ut leo, cras viverra metus rhoncus sem, nulla et lectus vestibulum.
-    Phasellus eu tellus sit amet tortor gravida placerat.
-    Integer sapien est, iaculis in, pretium quis, viverra ac, nunc.
-    Praesent eget sem vel leo ultrices bibendum.
-    Aenean faucibus, morbi dolor nulla, malesuada eu, pulvinar at, mollis ac.
-    Curabitur auctor semper nulla donec varius orci eget risus.
-    Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam.
-    Duis eget orci sit amet orci dignissim rutrum.
+some awesome text about the great models...
+
+In my opinion the big advantage with respect to previous implementations and studies (e.g. Wiersma EAGLE or Illustris) lies in the fact that we use tables which are synthesized a priori, marginalizing over uncertain model input parameters using chempy. E.g. we can use chempy to fix IMF slope, supernova mass ranges and SNIa rates such that the MW data is recovered and then use this set of yields for the cosmo sims.
+strong use case: 
+galactic archeology
+high-z CGM abundances
 \end{abstract}
 
-% Main body with filler text
-\section{Introduction}
-\label{sec:intro}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+\begin{keywords}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
-Curabitur dictum gravida mauris, consectetuer id, vulputate a, magna.
-Donec vehicula augue eu neque, morbi tristique senectus et netus et.
-Mauris ut leo, cras viverra metus rhoncus sem, nulla et lectus vestibulum.
-Phasellus eu tellus sit amet tortor gravida placerat.
-Integer sapien est, iaculis in, pretium quis, viverra ac, nunc.
-Praesent eget sem vel leo ultrices bibendum.
-Aenean faucibus, morbi dolor nulla, malesuada eu, pulvinar at, mollis ac.
-Curabitur auctor semper nulla donec varius orci eget risus.
-Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam.
-Duis eget orci sit amet orci dignissim rutrum.
+Galaxy: structure --- galaxies:
+  evolution --- galaxies: kinematics and dynamics --- galaxies:
+  formation --- Galaxy: disk --- methods: numerical
+ \end{keywords}
 
-Nam dui ligula, fringilla a, euismod sodales, sollici- tudin vel, wisi.
-Morbi auctor lorem non justo, nam lacus libero, pretium at, lobortis vitae.
-Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna.
-Morbi ac orci et nisl hendrerit mollis, suspendisse ut massa, cras nec ante.
-Pellentesque a nulla cum sociis natoque penatibus et magnis dis parturient.
-Aliquam tincidunt urna, nulla ullamcorper vestibulum turpis.
-Pellentesque cursus luctus mauris \citep{Luger2021}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bibliography{bib}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction} \label{sec:introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Method: Chemical evolution model} \label{sec:simulation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%% FIGURE 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\begin{center}
+\begin{minipage}{.495\textwidth}
+\centering
+\includegraphics[width=\textwidth]{./plots/imf}
+\end{minipage}
+\begin{minipage}{.495\textwidth}
+\centering
+\includegraphics[width=\textwidth]{./plots/lifetime}
+\includegraphics[width=\textwidth]{./plots/delay_time}
+\end{minipage}
+\end{center}
+\vspace{-.35cm}
+\caption{The simple stellar population model parameters: The stellar initial mass function (IMF, left panel), the stellar lifetime function (upper right panel) and the SNIa delay time distribution function (lower right panel). In the left panel we compare different IMFs as indicated in the legend. For each IMF the coloured numbers indicate the mass fraction of star above $8 \Msun$ up to the assumed maximum mass of $100 \Msun$. The upper right panel compares stellar lifetimes as a function of stellar mass for models from \citet{Argast2000} for three different metallicities with a model from \citet{Raiteri1996} at solar metallicity. Gray dashed lines indicate the lifetime of an $8 \Msun$ star. The lower right panel shows the empirical SNIa delay time distribution \citep{Maoz2010} with parameters taken from \citet{Maoz2012} and \citet{MaozMannucci2012}. Gray data points show the observational data taken from \citet{Maoz2012}.}
+\label{fig:param1}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%% FIGURE 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\begin{center}
+\begin{minipage}{.495\textwidth}
+\centering
+\includegraphics[width=\textwidth]{./plots/number}
+\includegraphics[width=\textwidth]{./plots/massloss}
+
+\end{minipage}
+\begin{minipage}{.495\textwidth}
+\centering
+\includegraphics[width=\textwidth]{./plots/yield_z_chieffi}
+\end{minipage}
+
+\end{center}
+\vspace{-.35cm}
+\caption{The simple stellar model predictions: The upper left panel shows the number of core-collapse supernova, SNIa and AGB stars as a function of time at solar metallicity assuming a fiducial Chabrier IMF (solid coloured lines) while gray dashed lines assume a Kroupa IMF. The lower left panel shows the corresponding mass fraction as a function of time of different components of the simple stellar population. The solid blue line shows the mass fraction in main sequence stars as a function of simple stellar population age assuming a Chabrier IMF while the dashed blue line assumes a Kroupa IMF. The red solid line shows the total mass loss of the population (assuming the Chabrier IMF) which is lower than the mass fraction of dying stars (orange line) by the amount of mass in stellar remnants (green line, e.g. stellar mass black holes or white dwarfs). Grau dashed lines show the mass loss for each individual channel (CC SN, AGB stars and SNIa). The two vertical dashed lines show the lifetime of a $100 \Msun$ star and the lifetime of the minimum mass star exploding as CC SN which we assumed to be of $8 \Msun$ here. The right hand panel shows the corresponding cumulative ejected SSP mass split into different elements for two different metallicities assuming stellar yields taken from \citet{Chieffi2004,Karakas2016,Seitenzahl2013}.}
+\label{fig:massloss}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%% FIGURE 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\begin{center}
+\includegraphics[width=\textwidth]{./plots/yield_hist}
+\includegraphics[width=\textwidth]{./plots/yield_sources}
+\end{center}
+\vspace{-.35cm}
+\caption{Example tracks of traced elements. The upper panel shows the fractional element return of the whole SSP for 42 example elements (out of a total of 81 tracked elements) split into the three different channels of elements produced by CC SN (blue), AGB (green) stars and SNIa (orange). The histograms show the relative contribution of different processes to the total metal return of the SSP; e.g. CC SN and SNIa contribute equally to the production of iron. Negative values as e.g. for hydrogen indicate destruction/fusion of elements into higher mass elements. The four bottom panels show the element return of the SSP as a function of time for different elements as indicated in each panel. We split the total element return (gray line) into the three different channels showing the contribution by CC SN in blue, by AGB stars in green and by SNIa in orange.}
+\label{fig:yhist}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% TABLE 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}
+\label{tab:props}
+\begin{center}
+\caption{Yield tables implemented in Chempy.}
+\begin{minipage}{.5\textwidth}
+\begin{tabular}{l c c }
+		\hline\hline
+		Yield Table & Masses & Metallicities \\
+		%  &  & [$\Msun$] &  \\
+		\hline
+		\multicolumn{3}{c}{CC SN}\\
+		\hline
+		\citet{Portinari1998} & [6,120] & [0.0004,0.05] \\
+		\citet{Francois2004} & [11,40] & [0.02] \\
+		\citet{Chieffi2004} & [13,35] & [0,0.02] \\
+		\citet{Nomoto2013} & [13,40] & [0.001,0.05] \\
+		\citet{Frischknecht2016} & [15,40] & [0.00001,0.0134] \\
+		West \& Heger (in prep.) & [13,30] & [0,0.3] \\
+		\citet{Ritter2018} & [12,25] & [0.0001,0.02] \\
+		\citet{Limongi2018}\footnote{Using the rotation parametrization of \citet{Prantzos2018}} & [13,120] & [0.0000134,0.0134] \\
+		\hline
+		\multicolumn{3}{c}{SN$_{\rm Ia}$}\\
+		\hline
+		\citet{Iwamoto1999} & [1.38] & [0,0.02] \\
+		\citet{Thielemann2003} & [1.374] & [0.02] \\
+		\citet{Seitenzahl2013} & [1.40] & [0.02] \\
+		\hline
+		\multicolumn{3}{c}{AGB}\\
+		\hline
+		\citet{Karakas2010} & [1,6.5] & [0.0001,0.02] \\
+		\citet{Ventura2013} & [1,6.5] & [0.0001,0.02] \\
+		\citet{Pignatari2016} & [1.65,5] & [0.01,0.02] \\
+		\citet{Karakas2016} & [1,8] & [0.001,0.03] \\
+		TNG\footnote{The TNG yield set for AGB stars is a mixture of yields taken from \citet{Karakas2010,Doherty2014} and \citet{Fishlock2014}} & [1,7.5] & [0.0001,0.02] \\
+		\hline
+		\multicolumn{3}{c}{Hypernova}\\
+		\hline
+		\citet{Nomoto2013} & [20,40] & [0.001,0.05] \\
+        \hline
+\end{tabular}
+\end{minipage}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%% FIGURE 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\begin{center}
+\includegraphics[width=\textwidth]{./plots/snia_yield_hist}
+\includegraphics[width=\textwidth]{./plots/snii_yield_hist}
+\includegraphics[width=\textwidth]{./plots/agb_yield_hist}
+\end{center}
+\vspace{-.35cm}
+\caption{IMF weighted relative differences between our fiducial yield set using CC SN yields from \citet{Chieffi2004}, AGB star yields from \citet{Karakas2016} and SNIa yields from \citet{Seitenzahl2013} and other yield sets implemented in Chempy as indicated in the legend. The top panel shows SNIa yields by \citet{Iwamoto1999,Thielemann2003} and the Illustris TNG yields (see text for more explanation). The two middle panels compare CC SN yields from \citet{Limongi2018,Nomoto2013,Portinari1998}. The bottom panel compares AGB yields by \citet{Ventura2013,Pignatari2016} and the Illustris TNG yields with our fiducial yield set. An additional comparison of CC S yields from \citet{Frischknecht2016}, West \& Heger (in prep.) and the Nugrid collaboration \citep{Ritter2018} is shown in Fig. \ref{fig:comparison1} in the appendix.}
+\label{fig:comparison}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Application: Cosmological Zoom-in Simulations} \label{sec:simulation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Not sure, we get a high res version done until this paper will be submitted...
+Let's try g8.26e11
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results: Galactic chemical abundances}
+\label{sec:}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{some different elements [X/Fe] vs. [Fe/H]}
+do different elements give us insight into different formation epochs of the MW?
+detailed galactic archeology is left for future work.
+
+\subsection{relative contribution of different enrichment channels in L* galaxies: SNII vs. AGB vs. SNIa}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+\label{sec:conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Our results are summarized as follows:
+\begin{itemize}
+%
+\item 
+
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{acknowledgments}
+%\section*{Acknowledgments}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+TB's contribution to this project was made possible by funding from the Carl Zeiss Foundation. TB gratefully acknowledges the Gauss Centre for Supercomputing e.V. (www.gauss-centre.eu) for funding this project by providing computing time on the GCS Supercomputer SuperMUC at Leibniz Supercomputing Centre (www.lrz.de).
+This research made use of the {\sc{pynbody}} \citet{pynbody} package to analyze the simulations and used the {\sc{python}} package {\sc{matplotlib}} \citep{matplotlib} to display all figures in this work. Data analysis for this work made intensive use of the {\sc{python}} library {\sc{SciPy}} \citep{scipy}, in particular {\sc{NumPy and IPython}} \citep{numpy,ipython}.
+This research was carried out on the High Performance Computing resources at New York University Abu Dhabi; Simulations have been performed on the ISAAC cluster of the Max-Planck-Institut f\"ur Astronomie at the Rechenzentrum in Garching and the DRACO cluster at the Rechenzentrum in Garching. We greatly appreciate the contributions of all these computing allocations.
+
+
+\bibliography{astro-ph.bib}
+
+\appendix
+
+\section{Additional CC SN yields}
+
+%%%%%%%%%%%%%%%%%% FIGURE A1 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\begin{center}
+\includegraphics[width=\textwidth]{./plots/snii_alt_yield_hist}
+\end{center}
+\vspace{-.35cm}
+\caption{Same as Fig. \ref{fig:comparison} but this time comparing the CC SN yields from \citet{Frischknecht2016}, West \& Heger (in prep.) and from the Nugrid collaboration \citep{Ritter2018} to our fiducial yieldset.}
+\label{fig:comparison1}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\label{lastpage}
 \end{document}
+
