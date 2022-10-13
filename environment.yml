@@ -1,6 +1,9 @@
 dependencies:
   - numpy=1.19.2
-  - pip=21.0.1
-  - python=3.9
+  - pip=22.2.2
+  - python=3.10.6
+  - pickle
+  - glob
+  - seaborn
   - pip:
       - matplotlib==3.4.3
