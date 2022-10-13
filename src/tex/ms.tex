@@ -19,6 +19,21 @@
 \usepackage{threeparttablex}
 \usepackage{array}
 
+% --- HACK to remove showyourwork abstract margin icon
+\makeatletter
+\def\abstract{\if@twocolumn
+   \start@SFBbox\@abstract
+ \else
+   \@abstract
+ \fi}
+\def\endabstract{\if@twocolumn
+   \endlist\finish@SFBbox
+ \else
+  \endlist
+ \fi}
+\makeatother
+% ---
+
 %\usepackage{pdflscape}
 
 %%%%% AUTHORS - PLACE YOUR OWN MACROS HERE %%%%%
