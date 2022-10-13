@@ -82,7 +82,7 @@ ax = plt.twinx()
 ax.plot(time[:-5]/1000.,gas_ratio)
 ax.set_ylabel("$\mathrm{merger\, ratio}$")
 
-plt.savefig(paths.figures / '2.79e12_gas_mass.pdf')
+plt.savefig(paths.figures / '279e12_gas_mass.pdf')
 
 plt.clf()
 
@@ -95,7 +95,7 @@ ax = plt.twinx()
 ax.plot(time[:-5]/1000.,star_ratio)
 ax.set_ylabel("$\mathrm{merger\, ratio}$")
 
-plt.savefig(paths.figures / '2.79e12_star_mass.pdf')
+plt.savefig(paths.figures / '279e12_star_mass.pdf')
 
 # total mass ratio
 plt.plot(time/1000.,mass)
@@ -106,4 +106,4 @@ ax = plt.twinx()
 ax.plot(time[:-5]/1000.,mass_ratio)
 ax.set_ylabel("$\mathrm{merger\, ratio}$")
 
-plt.savefig(paths.figures / '2.79e12_tot_mass.pdf')
+plt.savefig(paths.figures / '279e12_tot_mass.pdf')
