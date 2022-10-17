@@ -1,3 +1,4 @@
+import matplotlib.pylab as plt
 import matplotlib.gridspec as gridspec
 import numpy as np
 import pickle, paths
