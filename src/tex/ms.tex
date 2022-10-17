@@ -19,21 +19,6 @@
 \usepackage{threeparttablex}
 \usepackage{array}
 
-% --- HACK to remove showyourwork abstract margin icon
-\makeatletter
-\def\abstract{\if@twocolumn
-   \start@SFBbox\@abstract
- \else
-   \@abstract
- \fi}
-\def\endabstract{\if@twocolumn
-   \endlist\finish@SFBbox
- \else
-  \endlist
- \fi}
-\makeatother
-% ---
-
 %\usepackage{pdflscape}
 
 %%%%% AUTHORS - PLACE YOUR OWN MACROS HERE %%%%%
@@ -268,7 +253,7 @@ $^3$Universit\"ats-Sternwarte M\"unchen, Scheinerstraße 1, D-81679 M\"unchen, G
 
 
 \begin{abstract}
-awesome science! keep on reading and cite me!  
+awesome science! keep on reading and cite me! 
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -292,10 +277,28 @@ Galaxy: structure --- Galaxy: evolution --- Galaxy: kinematics and dynamics --- 
 \section{Methods} \label{sec:simulation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{figure}
+    \script{half_mass_radius_gas.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/279e12_gas_size.pdf}
+        \caption{
+            Half mass radius of the cold gas as a function of time. The sharp increases in the cold gas size around 2 Gyr and 9 Gyr indicate the influence of massive gas rich merger events on the galaxy. The addition of fresh cold gass leads to a sudden increase in cold gas half mass size.
+        }
+        \label{fig:half_mass}
+    \end{centering}
+\end{figure}
 
 
-
-
+\begin{figure}
+    \script{merger_ratio.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/2.79e12_merger_ratio_gas.pdf}
+        \caption{
+            Half mass radius of the cold gas as a function of time. The sharp increases in the cold gas size around 2 Gyr and 9 Gyr indicate the influence of massive gas rich merger events on the galaxy. The addition of fresh cold gass leads to a sudden increase in cold gas half mass size.
+        }
+        \label{fig:half_mass}
+    \end{centering}
+\end{figure}
 
 
 
