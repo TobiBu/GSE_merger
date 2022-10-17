@@ -50,4 +50,4 @@ hist, xe, ye = np.histogram2d(data['feh'],data['ofe'],range=((-3,0.75),(-0,0.6))
 ax3.imshow(np.log(hist).T, origin='lower', extent=((-3,0.75,-0,0.6)), aspect='auto',cmap='Oranges')
 ax3.set_title("$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00292'])
 
-plt.savefig(paths.figures / '2.79e12_feh_ofe_grid.pdf", bbox_inches='tight')
+plt.savefig(paths.figures / '2.79e12_feh_ofe_grid.pdf', bbox_inches='tight')
