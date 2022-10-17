@@ -104,8 +104,9 @@ mass = data['mass']
 x = (xe[1:]+xe[:-1])/2.
 y = (ye[1:]+ye[:-1])/2.
 
-cs = ax4.contour(x,y,np.log10(mass.T), levels=[1,2,3,4,5], cmap='Blues', linestyles=ls, linewidths=5, extent=((-3,0.75,-0,0.6)))
-
+cs = ax4.contour(x,y,np.log10(mass.T), levels=[3,4,5.25,6.25,6.75], cmap='Blues', linewidths=2.5, extent=((-3,0.75,-0,0.6)))
+ax4.set_ylim(-0,0.6)
+ax4.set_xlim(-3,0.75)
 
 data = pickle.load(open(paths.data / '2.79e12.00376_age_fe_halo8_stars.dat','rb'))
 hist, xe, ye = np.histogram2d(data['feh'],data['ofe'],range=((-3,0.75),(-0,0.6)),bins=200)
@@ -120,8 +121,9 @@ mass = data['mass']
 x = (xe[1:]+xe[:-1])/2.
 y = (ye[1:]+ye[:-1])/2.
 
-cs = ax5.contour(x,y,np.log10(mass.T), levels=[1,2,3,4,5], cmap='Greens', linestyles=ls, linewidths=5, extent=((-3,0.75,-0,0.6)))
-
+cs = ax5.contour(x,y,np.log10(mass.T), levels=[3,4,5.25,6.25,6.75], cmap='Greens', linewidths=2.5, extent=((-3,0.75,-0,0.6)))
+ax5.set_ylim(-0,0.6)
+ax5.set_xlim(-3,0.75)
 
 data = pickle.load(open(paths.data / '2.79e12.00376_age_fe_halo1_stars.dat','rb'))
 hist, xe, ye = np.histogram2d(data['feh'],data['ofe'],range=((-3,0.75),(-0,0.6)),bins=200)
@@ -136,8 +138,9 @@ mass = data['mass']
 x = (xe[1:]+xe[:-1])/2.
 y = (ye[1:]+ye[:-1])/2.
 
-cs = ax6.contour(x,y,np.log10(mass.T), levels=[1,2,3,4,5], cmap='Purples', linestyles=ls, linewidths=5, extent=((-3,0.75,-0,0.6)))
-
+cs = ax6.contour(x,y,np.log10(mass.T), levels=[3,4,5.25,6.25,6.75], cmap='Purples', linewidths=2.5, extent=((-3,0.75,-0,0.6)))
+ax6.set_ylim(-0,0.6)
+ax6.set_xlim(-3,0.75)
 
 data = pickle.load(open(paths.data / '2.79e12.00292_age_fe_halo2_stars.dat','rb'))
 hist, xe, ye = np.histogram2d(data['feh'],data['ofe'],range=((-3,0.75),(-0,0.6)),bins=200)
@@ -152,7 +155,8 @@ mass = data['mass']
 x = (xe[1:]+xe[:-1])/2.
 y = (ye[1:]+ye[:-1])/2.
 
-cs = ax7.contour(x,y,np.log10(mass.T), levels=[1,2,3,4,5], cmap='Oranges', linestyles=ls, linewidths=5, extent=((-3,0.75,-0,0.6)))
-
+cs = ax7.contour(x,y,np.log10(mass.T), levels=[3,4,5.25,6.25,6.75], cmap='Oranges', linewidths=2.5, extent=((-3,0.75,-0,0.6)))
+ax7.set_ylim(-0,0.6)
+ax7.set_xlim(-3,0.75)
 
 plt.savefig(paths.figures / '2.79e12_feh_ofe_grid.pdf', bbox_inches='tight')
