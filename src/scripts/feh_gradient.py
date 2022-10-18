@@ -71,9 +71,9 @@ for snap in snaps:
 data = pickle.load(open( paths.data / '2.79e12.00292_cold_gas_profile.dat','rb'))
 ax.plot(data['bins'],data['feh'], color='darkblue')
 
-ax.ylim(-1.9,-0.2)
-ax.ylabel("$\mathrm{[Fe/H]}$")
-ax.xlabel("$\mathrm{radius\ [kpc]}$")
+ax.set_ylim(-1.9,-0.2)
+ax.set_ylabel("$\mathrm{[Fe/H]}$")
+ax.set_xlabel("$\mathrm{radius\ [kpc]}$")
 ax1.set_title("$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00292'])
 ax.legend()
 
@@ -97,10 +97,10 @@ for snap in snaps:
 data = pickle.load(open( paths.data / '2.79e12.00376_cold_gas_profile.dat','rb'))
 ax1.plot(data['bins'],data['feh'], color='darkblue')
 
-ax1.ylim(-1.9,-0.2)
+ax1.set_ylim(-1.9,-0.2)
 #ax1.ylabel("$\mathrm{[Fe/H]}$")
 ax1.set_yticklabels([])
-ax1.xlabel("$\mathrm{radius\ [kpc]}$")
+ax1.set_xlabel("$\mathrm{radius\ [kpc]}$")
 ax1.set_title("$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00376'])
 ax1.legend()
 

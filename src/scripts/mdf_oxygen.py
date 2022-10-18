@@ -66,8 +66,8 @@ ax.hist(data['ofe'],bins=50, histtype='step', range=(.10,0.6), density=True, lab
 ax.hist(data['ofe_gas'],bins=50, histtype='stepfilled', alpha=.5, range=(.10,0.6), density=True, label='$\mathrm{merger\, galaxy\, gas}$')
 
 ax.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['00292'])
-ax.xlabel('$\mathrm{[O/Fe]}$')
-ax.ylabel('$\mathrm{d} f/\mathrm{d[O/Fe]}$')
+ax.set_xlabel('$\mathrm{[O/Fe]}$')
+ax.set_ylabel('$\mathrm{d} f/\mathrm{d[O/Fe]}$')
 ax.ylim(0,15.8)
 
 
@@ -78,8 +78,8 @@ ax1.hist(data2['ofe'],bins=50, histtype='step', range=(.10,0.6), density=True, l
 ax1.hist(data2['ofe_gas'],bins=50, histtype='stepfilled', alpha=0.5,range=(.10,0.6), density=True, label='$\mathrm{merger\, galaxy\, 1\, gas}$')
 
 ax1.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['00376']) # done merging by 3 Gyr
-ax1.xlabel('$\mathrm{[Fe/H]}$')
-ax1.ylim(0,15.8)
+ax1.set_xlabel('$\mathrm{[Fe/H]}$')
+ax1.set_ylim(0,15.8)
 
 
 ax2.hist(data_main2['ofe'],bins=50, histtype='step', color='k', range=(.10,0.6), density=True, label='$\mathrm{main\, galaxy\, stars}$')
@@ -88,7 +88,7 @@ ax2.hist(data3['ofe'],bins=50, histtype='step', range=(.10,0.6), density=True, l
 ax2.hist(data3['ofe_gas'],bins=50, histtype='stepfilled', alpha=0.5, range=(.10,0.6), density=True, label='$\mathrm{merger\, galaxy\, 2\, gas}$')
 
 ax2.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['00376']) # done merging by 3 Gyr
-ax2.xlabel('$\mathrm{[Fe/H]}$')
-ax2.ylim(0,15.8)
+ax2.set_xlabel('$\mathrm{[Fe/H]}$')
+ax2.set_ylim(0,15.8)
 
 plt.savefig(paths.figures / '2.79e12_mdf_oxygen_gas.pdf', bbox_inches='tight')
