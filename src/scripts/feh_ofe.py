@@ -77,9 +77,9 @@ ax5.set_xlabel("$\mathrm{[Fe/H]}$")
 ax6.set_xlabel("$\mathrm{[Fe/H]}$")
 ax7.set_xlabel("$\mathrm{[Fe/H]}$")
 
-time_dict = pickle.load(open(paths.data / '2.79e12_time_dict.dat','rb'))
+time_dict = pickle.load(open( paths.data / '2.79e12_time_dict.dat','rb'))
 
-data = pickle.load(open(paths.data / '2.79e12_age_fe.dat','rb'))
+data = pickle.load(open( paths.data / '2.79e12_age_fe.dat','rb'))
 hist, xe, ye = np.histogram2d(data['feh'],data['ofe'],range=((-3,0.75),(-0,0.6)),bins=200)
 ax.imshow(np.log(hist).T, origin='lower', extent=((-3,0.75,-0,0.6)), aspect='auto', cmap='Greys')
 ax1.imshow(np.log(hist).T, origin='lower', extent=((-3,0.75,-0,0.6)), aspect='auto', cmap='Greys')
@@ -91,12 +91,12 @@ ax5.imshow(np.log(hist).T, origin='lower', extent=((-3,0.75,-0,0.6)), aspect='au
 ax6.imshow(np.log(hist).T, origin='lower', extent=((-3,0.75,-0,0.6)), aspect='auto', cmap='Greys')
 ax7.imshow(np.log(hist).T, origin='lower', extent=((-3,0.75,-0,0.6)), aspect='auto', cmap='Greys')
 
-data = pickle.load(open(paths.data / '2.79e12.01350_age_fe_halo1_stars.dat','rb'))
+data = pickle.load(open( paths.data / '2.79e12.01350_age_fe_halo1_stars.dat','rb'))
 hist, xe, ye = np.histogram2d(data['feh'],data['ofe'],range=((-3,0.75),(-0,0.6)),bins=200)
 ax.imshow(np.log(hist).T, origin='lower', extent=((-3,0.75,-0,0.6)), aspect='auto',cmap='Blues')
 ax.set_title("$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['01350'])
 
-data = pickle.load(open(paths.data / '2.79e12.01350_alpha_fe_halo1_gas.dat','rb'))
+data = pickle.load(open( paths.data / '2.79e12.01350_alpha_fe_halo1_gas.dat','rb'))
 xe = data['xbins']
 ye = data['ybins']
 mass = data['mass']
@@ -108,12 +108,12 @@ cs = ax4.contour(x,y,np.log10(mass.T), levels=[3,4,5.25,6.25,6.75], cmap='Blues'
 ax4.set_ylim(-0,0.6)
 ax4.set_xlim(-3,0.75)
 
-data = pickle.load(open(paths.data / '2.79e12.00376_age_fe_halo8_stars.dat','rb'))
+data = pickle.load(open( paths.data / '2.79e12.00376_age_fe_halo8_stars.dat','rb'))
 hist, xe, ye = np.histogram2d(data['feh'],data['ofe'],range=((-3,0.75),(-0,0.6)),bins=200)
 ax1.imshow(np.log(hist).T, origin='lower', extent=((-3,0.75,-0,0.6)), aspect='auto',cmap='Greens')
 ax1.set_title("$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00376'])
 
-data = pickle.load(open(paths.data / '2.79e12.00376_alpha_fe_halo8_gas.dat','rb'))
+data = pickle.load(open( paths.data / '2.79e12.00376_alpha_fe_halo8_gas.dat','rb'))
 xe = data['xbins']
 ye = data['ybins']
 mass = data['mass']
@@ -125,12 +125,12 @@ cs = ax5.contour(x,y,np.log10(mass.T), levels=[3,4,5.25,6.25,6.75], cmap='Greens
 ax5.set_ylim(-0,0.6)
 ax5.set_xlim(-3,0.75)
 
-data = pickle.load(open(paths.data / '2.79e12.00376_age_fe_halo1_stars.dat','rb'))
+data = pickle.load(open( paths.data / '2.79e12.00376_age_fe_halo1_stars.dat','rb'))
 hist, xe, ye = np.histogram2d(data['feh'],data['ofe'],range=((-3,0.75),(-0,0.6)),bins=200)
 ax2.imshow(np.log(hist).T, origin='lower', extent=((-3,0.75,-0,0.6)), aspect='auto',cmap='Purples')
 ax2.set_title("$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00376'])
 
-data = pickle.load(open(paths.data / '2.79e12.00376_alpha_fe_halo1_gas.dat','rb'))
+data = pickle.load(open( paths.data / '2.79e12.00376_alpha_fe_halo1_gas.dat','rb'))
 xe = data['xbins']
 ye = data['ybins']
 mass = data['mass']
@@ -142,12 +142,12 @@ cs = ax6.contour(x,y,np.log10(mass.T), levels=[3,4,5.25,6.25,6.75], cmap='Purple
 ax6.set_ylim(-0,0.6)
 ax6.set_xlim(-3,0.75)
 
-data = pickle.load(open(paths.data / '2.79e12.00292_age_fe_halo2_stars.dat','rb'))
+data = pickle.load(open( paths.data / '2.79e12.00292_age_fe_halo2_stars.dat','rb'))
 hist, xe, ye = np.histogram2d(data['feh'],data['ofe'],range=((-3,0.75),(-0,0.6)),bins=200)
 ax3.imshow(np.log(hist).T, origin='lower', extent=((-3,0.75,-0,0.6)), aspect='auto',cmap='Oranges')
 ax3.set_title("$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00292'])
 
-data = pickle.load(open(paths.data / '2.79e12.00292_alpha_fe_halo2_gas.dat','rb'))
+data = pickle.load(open( paths.data / '2.79e12.00292_alpha_fe_halo2_gas.dat','rb'))
 xe = data['xbins']
 ye = data['ybins']
 mass = data['mass']
@@ -158,5 +158,16 @@ y = (ye[1:]+ye[:-1])/2.
 cs = ax7.contour(x,y,np.log10(mass.T), levels=[3,4,5.25,6.25,6.75], cmap='Oranges', linewidths=2.5, extent=((-3,0.75,-0,0.6)))
 ax7.set_ylim(-0,0.6)
 ax7.set_xlim(-3,0.75)
+
+ax.text(-.05,.5, "$\mathrm{stars}$")
+ax1.text(-.05,.5, "$\mathrm{stars}$")
+ax2.text(-.05,.5, "$\mathrm{stars}$")
+ax3.text(-.05,.5, "$\mathrm{stars}$")
+
+ax4.text(-.05,.5, "$\mathrm{gas}$")
+ax5.text(-.05,.5, "$\mathrm{gas}$")
+ax6.text(-.05,.5, "$\mathrm{gas}$")
+ax7.text(-.05,.5, "$\mathrm{gas}$")
+
 
 plt.savefig(paths.figures / '2.79e12_feh_ofe_grid.pdf', bbox_inches='tight')
