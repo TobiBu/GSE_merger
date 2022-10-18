@@ -74,7 +74,7 @@ ax.plot(data['bins'],data['feh'], color='darkblue')
 ax.set_ylim(-1.9,-0.2)
 ax.set_ylabel("$\mathrm{[Fe/H]}$")
 ax.set_xlabel("$\mathrm{radius\ [kpc]}$")
-ax1.set_title("$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00292'])
+ax.set_title("$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00292'])
 ax.legend()
 
 # now second merger
