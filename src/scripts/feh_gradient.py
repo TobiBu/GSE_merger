@@ -62,7 +62,7 @@ ax.plot(data['bins'],data['feh'],label='$%.2f\,\mathrm{Gyr}$'%time_dict['00376']
 i = 0
 for snap in snaps:
     file = '2.79e12' + snap + '_cold_gas_profile.dat'
-    data = pickle.load(open(paths.data / f,'rb'))
+    data = pickle.load(open(paths.data / file,'rb'))
     ax.plot(data['bins'],data['feh'],label='$%.2f\,\mathrm{Gyr}$'%time_dict[snap[1:]], color=color[i])
     if i == 2:
         i+=1
@@ -88,7 +88,7 @@ ax1.plot(data['bins'],data['feh'],label='$%.2f\,\mathrm{Gyr}$'%time_dict['00376'
 i = 0
 for snap in snaps:
     file = '2.79e12' + snap + '_cold_gas_profile.dat'
-    data = pickle.load(open(paths.data / f,'rb'))
+    data = pickle.load(open(paths.data / file,'rb'))
     ax1.plot(data['bins'],data['feh'],label='$%.2f\,\mathrm{Gyr}$'%time_dict[snap[1:]], color=color[i])
     if i == 2:
         i+=1
