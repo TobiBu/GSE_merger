@@ -68,7 +68,7 @@ ax.hist(data['ofe_gas'],bins=50, histtype='stepfilled', alpha=.5, range=(.10,0.6
 ax.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['00292'])
 ax.set_xlabel('$\mathrm{[O/Fe]}$')
 ax.set_ylabel('$\mathrm{d} f/\mathrm{d[O/Fe]}$')
-ax.ylim(0,15.8)
+ax.set_ylim(0,15.8)
 
 
 # second merger
