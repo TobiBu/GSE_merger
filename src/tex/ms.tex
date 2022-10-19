@@ -297,9 +297,19 @@ Galaxy: structure --- Galaxy: evolution --- Galaxy: kinematics and dynamics --- 
     \begin{centering}
         \includegraphics[width=\linewidth]{figures/279e12_gas_size.pdf}
         \caption{
-            Half mass radius of the cold gas as a function of time. The sharp increases in the cold gas size around 2 Gyr and 9 Gyr indicate the influence of massive gas rich merger events on the galaxy. The addition of fresh cold gass leads to a sudden increase in cold gas half mass size.
+            Half mass radius of the cold gas as a function of time. The sharp increases in the cold gas size around 2 Gyr and 9 Gyr indicate the influence of massive gas rich merger events on the galaxy. The addition of fresh cold gas leads to a sudden increase in cold gas half mass size.
         }
         \label{fig:half_mass}
+    \end{centering}
+\end{figure}
+
+
+\begin{figure}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/279e12_merger_ratio_gas.pdf}
+        \caption{Gas mass (blue line, left axis) and merger ratio (orange line, right axis) as a function of time. We identify gas rich mergers that contribute around 10\% of gas to the main galaxy between times of 2-4 Gyr and a late time merger starting around 9.5 Gyr that contributes 10\% of gas and continues for several pericenter passages and goes on for $\sim2$ Gyr.
+        }
+        \label{fig:merger_ratio}
     \end{centering}
 \end{figure}
 
@@ -314,7 +324,28 @@ Galaxy: structure --- Galaxy: evolution --- Galaxy: kinematics and dynamics --- 
     \end{centering}
 \end{figure}
 
+\begin{figure}
+    \script{v_phi.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/2.79e12_v_phi_gas.pdf}
+        \caption{
+            Histogram of the cold gas velocity in the disk plane, $v_\phi$, before and after the merger. The peak of the $v_\phi$ distribution shifts from 73 km/s before the merger to 140 km/s after the merger, almost doubling the rotation speed of the cold gas disk.
+        }
+        \label{fig:v_phi}
+    \end{centering}
+\end{figure}
 
+
+\begin{figure*}
+    \script{mdf.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/2.79e12_mdf_gas.pdf}
+        \caption{
+            Metallicity distribution function of the main galaxy and the merging satellite shortly before coalescence for all three merger events. Filled histograms show the gaseous MDF while steps show the MDF for stars. In any case, the gas metallicity of the satellite is $\sim0.5-0.75$ dex lower that the main galaxy's gas metallicity.
+        }
+        \label{fig:mdf}
+    \end{centering}
+\end{figure*}
 
 
 \begin{figure*}
@@ -331,14 +362,6 @@ Galaxy: structure --- Galaxy: evolution --- Galaxy: kinematics and dynamics --- 
 
 
 
-\begin{figure}
-    \begin{centering}
-        \includegraphics[width=\linewidth]{figures/279e12_merger_ratio_gas.pdf}
-        \caption{
-        }
-        \label{fig:merger_ratio}
-    \end{centering}
-\end{figure}
 
 
 
@@ -408,9 +431,33 @@ This research made use of the {\sc{pynbody}} \citet{pynbody} package to analyze 
 
 \bibliography{bib.bib}
 
-%\appendix
+\appendix
 
-%\section{Additional CC SN yields}
+\section{Rotation velocity of stars}
+
+\begin{figure}
+    \script{v_phi_stars.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/2.79e12_v_phi_stars.pdf}
+        \caption{
+            Same as Fig.~\ref{fig:v_phi} but for the stellar rotation velocity in the disk plane, $v_\phi$, before and after the merger. The peak of the $v_\phi$ distribution shifts from 27 km/s before the merger to 66 km/s after the merger, more than doubling the rotation speed of the stellar disk.
+        }
+        \label{fig:v_phi_stars}
+    \end{centering}
+\end{figure}
+
+\section{Oxygen abundance distribution}
+
+\begin{figure*}
+    \script{mdf_oxygen.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/2.79e12_mdf_oxygen_gas.pdf}
+        \caption{
+            Same as Fig.~\ref{fig:mdf} but for the oxygen abundance. Filled histograms show the gaseous oxygen abundance distribution while steps show the one for stars. The gas oxygen abundance of the satellite is  $\sim0.1$ dex lower that the main galaxy's gas oxygen abundance.
+        }
+        \label{fig:mdf_oxygen}
+    \end{centering}
+\end{figure*}
 
 \label{lastpage}
 \end{document}
