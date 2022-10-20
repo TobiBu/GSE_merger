@@ -170,9 +170,9 @@ ax2.set_ylim(-2,75)
 ax3 = ax3l.twinx()
 ax3.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
 ax3.spines['right'].set_color('darkorange')
+ax3l.spines['right'].set_color('darkorange')
 ax3.yaxis.label.set_color('darkorange')
 ax3.tick_params(axis='y', colors='darkorange')
-ax3.set_yticklabels([])
 ax3.set_ylim(-2,75)
 
 
