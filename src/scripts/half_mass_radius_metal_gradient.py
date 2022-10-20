@@ -80,7 +80,8 @@ r = -5
 
 time_dict = pickle.load(open(paths.data / '2.79e12_time_dict.dat','rb'))
 
-gas_profile_files = glob.glob(paths.data / '2.79e12.0????_cold_gas_profile.dat')
+file = paths.data / '2.79e12.0????_cold_gas_profile.dat'
+gas_profile_files = glob.glob(file)
 gas_profile_files.sort()
 
 for i, f in enumerate(gas_profile_files[::-1]):
