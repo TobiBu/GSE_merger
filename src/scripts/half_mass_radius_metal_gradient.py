@@ -155,7 +155,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
 ax2l.plot(times, np.convolve(slopes, np.ones(N)/N, mode='same'))
 
 ax2 = ax2l.twinx()
-data = pickle.load(open(paths.data / 'data/7.08e11_rhalf.dat','rb'))
+data = pickle.load(open(paths.data / '7.08e11_rhalf.dat','rb'))
 ax2.plot(data['time'],data['rhalf_cold'],c='darkorange')
 #ax2.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
 
