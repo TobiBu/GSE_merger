@@ -82,8 +82,8 @@ snaps = ['.00470','.00430','.00400','.00390','.00376']
 
 i = 0
 
-data = pickle.load(open( paths.data / '2.79e12.00480_cold_gas_profile.dat','rb'))
-ax1.plot(data['bins'],data['feh'],label='$%.2f\,\mathrm{Gyr}$'%time_dict['00376'], color='dimgrey')
+data = pickle.load(open( paths.data / '2.79e12.00560_cold_gas_profile.dat','rb'))
+ax1.plot(data['bins'],data['feh'],label='$%.2f\,\mathrm{Gyr}$'%time_dict['00560'], color='dimgrey')
 
 i = 0
 for snap in snaps:
