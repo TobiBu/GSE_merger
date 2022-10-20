@@ -85,7 +85,7 @@ gas_profile_files = glob.glob('2.79e12.0????_cold_gas_profile.dat', root_dir=pat
 gas_profile_files.sort()
 
 for i, f in enumerate(gas_profile_files[::-1]):
-    data = pickle.load(open(f,'rb'))
+    data = pickle.load(open(paths.data / f,'rb'))
     slope, intercept, r_value, p_value, std_err = stats.linregress(data['bins'][l:r],data['feh'][l:r])
     slopes.append(slope)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
