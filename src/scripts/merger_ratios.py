@@ -57,12 +57,12 @@ ax2l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 ax3l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 
 axl.set_ylim(1e7,4e11)
-axl.set_xlim(0,14)
-ax1l.set_xlim(0,14)
+axl.set_xlim(0,13.9)
+ax1l.set_xlim(0,13.9)
 ax1l.set_ylim(1e7,4e11)
-ax2l.set_xlim(0,14)
+ax2l.set_xlim(0,13.9)
 ax2l.set_ylim(1e7,4e11)
-ax3l.set_xlim(0,14)
+ax3l.set_xlim(0,13.9)
 ax3l.set_ylim(1e7,4e11)
 
 #let's do g2.79e12
