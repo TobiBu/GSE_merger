@@ -90,16 +90,17 @@ for i, f in enumerate(gas_profile_files[::-1]):
     slopes.append(slope)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
-axl.plot(times, np.convolve(slopes, np.ones(N)/N, mode='same') )
+axl.plot(times, np.convolve(slopes, np.ones(N)/N, mode='same'), label='$\mathrm{metallicity\ gradient\ cold\ gas}$' )
+axl.text(7,-0.01,'g2.79e12',fontsize=30)
 
 ax = axl.twinx()
 data = pickle.load(open(paths.data / '2.79e12_rhalf.dat','rb'))
-ax.plot(data['time'],data['rhalf_cold'],c='darkorange')
+ax.plot(data['time'],data['rhalf_cold'],c='darkorange', label='$\mathrm{half\ mass radius\ cold\ gas}$')
 #ax.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
 
 ax.spines['right'].set_color('darkorange')
 ax.yaxis.label.set_color('darkorange')
-#ax.tick_params(axis='y', colors='orange')
+ax.tick_params(axis='y', colors='orange')
 ax.set_yticklabels([])
 ax.set_ylim(-2,75)
 
@@ -122,6 +123,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
 ax1l.plot(times, np.convolve(slopes, np.ones(N)/N, mode='same'))
+ax1l.text(7,-0.01,'g7.55e11',fontsize=30)
 
 ax1 = ax1l.twinx()
 data = pickle.load(open(paths.data / '7.55e11_rhalf.dat','rb'))
@@ -129,7 +131,7 @@ ax1.plot(data['time'],data['rhalf_cold'],c='darkorange')
 
 ax1.spines['right'].set_color('darkorange')
 ax1.yaxis.label.set_color('darkorange')
-#ax.tick_params(axis='y', colors='darkorange')
+ax.tick_params(axis='y', colors='darkorange')
 ax1.set_yticklabels([])
 ax1.set_ylim(-2,75)
 
@@ -153,6 +155,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
 ax2l.plot(times, np.convolve(slopes, np.ones(N)/N, mode='same'))
+ax2l.text(7,-0.01,'g7.08e11',fontsize=30)
 
 ax2 = ax2l.twinx()
 data = pickle.load(open(paths.data / '7.08e11_rhalf.dat','rb'))
@@ -161,12 +164,13 @@ ax2.plot(data['time'],data['rhalf_cold'],c='darkorange')
 
 ax2.spines['right'].set_color('darkorange')
 ax2.yaxis.label.set_color('darkorange')
-#ax2.tick_params(axis='y', colors='darkorange')
+ax2.tick_params(axis='y', colors='darkorange')
 ax2.set_yticklabels([])
 ax2.set_ylim(-2,75)
 
-
 # now we do g8.26e11
+ax3l.text(7,-0.01,'g8.26e11',fontsize=30)
+
 ax3 = ax3l.twinx()
 ax3.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
 ax3.spines['right'].set_color('darkorange')
@@ -175,5 +179,6 @@ ax3.yaxis.label.set_color('darkorange')
 ax3.tick_params(axis='y', colors='darkorange')
 ax3.set_ylim(-2,75)
 
+plt.spines['right'].set_color('darkorange')
 
 plt.savefig(paths.figures / 'half_mass_radius_metal_gradient.pdf', bbox_inches='tight')
