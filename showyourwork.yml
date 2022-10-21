@@ -20,3 +20,5 @@ datasets:
 dependencies:
   src/scripts/feh_ofe.py:
       - src/data/2.79e12_age_fe.dat
+  src/scripts/v_phi_stars.py:
+      - src/data/2.79e12..00480_main_halo_total_age_fe.dat
