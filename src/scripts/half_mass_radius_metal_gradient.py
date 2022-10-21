@@ -68,7 +68,7 @@ ax2l.set_ylim(-.105,0.0)
 ax3l.set_xlim(0,14)
 ax3l.set_ylim(-.105,0.0)
 
-N = 8  # window size for running average of gradient
+N = 10  # window size for running average of gradient
 
 
 #let's do g2.79e12
