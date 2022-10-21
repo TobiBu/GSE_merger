@@ -70,7 +70,7 @@ ax3l.set_ylim(1e7,4e11)
 data = pickle.load(open(paths.data / '2.79e12_merger_tree_data.dat','rb'))
 time = np.linspace(0,13.8, len(data['gas_mass']))
 
-axl.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
+axl.plot(time, data['gas_mass'][::-1], label='$\mathrm{gas/, mass}$' )
 axl.text(7,5e10,'g2.79e12',fontsize=30)
 axl.set_yscale('log')
 
@@ -81,13 +81,13 @@ ax.spines['right'].set_color('darkorange')
 ax.yaxis.label.set_color('darkorange')
 ax.tick_params(axis='y', colors='orange')
 ax.set_yticklabels([])
-ax.set_ylim(-2,.25)
+ax.set_ylim(-.05,.25)
 
 # now g7.55e11
 data = pickle.load(open(paths.data / '7.55e11_merger_tree_data.dat','rb'))
 time = np.linspace(0,13.8, len(data['gas_mass']))
 
-ax1l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
+ax1l.plot(time, data['gas_mass'][::-1], label='$\mathrm{gas/, mass}$' )
 ax1l.text(7,5e10,'g7.55e11',fontsize=30)
 ax1 = ax1l.twinx()
 ax1l.set_yscale('log')
@@ -98,14 +98,14 @@ ax1.spines['right'].set_color('darkorange')
 ax1.yaxis.label.set_color('darkorange')
 ax1.tick_params(axis='y', colors='orange')
 ax1.set_yticklabels([])
-ax1.set_ylim(-2,.25)
+ax1.set_ylim(-.05,.25)
 
 
 # now we do g7.08e11
 data = pickle.load(open(paths.data / '7.08e11_merger_tree_data.dat','rb'))
 time = np.linspace(0,13.8, len(data['gas_mass']))
 
-ax2l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
+ax2l.plot(time, data['gas_mass'][::-1], label='$\mathrm{gas/, mass}$' )
 ax2l.text(7,5e10,'g7.08e11',fontsize=30)
 ax2 = ax2l.twinx()
 ax2l.set_yscale('log')
@@ -116,13 +116,13 @@ ax2.spines['right'].set_color('darkorange')
 ax2.yaxis.label.set_color('darkorange')
 ax2.tick_params(axis='y', colors='orange')
 ax2.set_yticklabels([])
-ax2.set_ylim(-2,.25)
+ax2.set_ylim(-.05,.25)
 
 # now we do g8.26e11
 data = pickle.load(open(paths.data / '2.79e12_merger_tree_data.dat','rb'))
 time = np.linspace(0,13.8, len(data['gas_mass']))
 
-ax3l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
+ax3l.plot(time, data['gas_mass'][::-1], label='$\mathrm{gas/, mass}$' )
 ax3l.text(7,5e10,'g2.79e12',fontsize=30)
 ax3 = ax3l.twinx()
 ax3l.set_yscale('log')
@@ -133,7 +133,7 @@ ax3.spines['right'].set_color('darkorange')
 ax3.yaxis.label.set_color('darkorange')
 ax3.tick_params(axis='y', colors='orange')
 ax3.set_yticklabels([])
-ax3.set_ylim(-2,.25)
+ax3.set_ylim(-.05,.25)
 
 #plt.spines['right'].set_color('darkorange')
 
