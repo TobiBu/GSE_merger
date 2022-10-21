@@ -98,6 +98,7 @@ ax = axl.twinx()
 data = pickle.load(open(paths.data / '2.79e12_rhalf.dat','rb'))
 ax.plot(data['time'],data['rhalf_cold'],c='darkorange', label='$\mathrm{half\ mass radius\ cold\ gas}$')
 #ax.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
+ax.legend()
 
 ax.spines['right'].set_color('darkorange')
 ax.yaxis.label.set_color('darkorange')
