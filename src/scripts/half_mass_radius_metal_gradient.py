@@ -179,6 +179,6 @@ ax3.yaxis.label.set_color('darkorange')
 ax3.tick_params(axis='y', colors='darkorange')
 ax3.set_ylim(-2,75)
 
-plt.spines['right'].set_color('darkorange')
+#plt.spines['right'].set_color('darkorange')
 
 plt.savefig(paths.figures / 'half_mass_radius_metal_gradient.pdf', bbox_inches='tight')
