@@ -76,6 +76,7 @@ axl.set_yscale('log')
 
 ax = axl.twinx()
 ax.plot(time[:-5],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
+ax.legend()
 
 ax.spines['right'].set_color('darkorange')
 ax.yaxis.label.set_color('darkorange')
@@ -132,8 +133,8 @@ ax3.plot(time[:-5],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ rat
 ax3.spines['right'].set_color('darkorange')
 ax3.yaxis.label.set_color('darkorange')
 ax3.tick_params(axis='y', colors='orange')
-ax3.set_yticklabels([])
 ax3.set_ylim(-.05,.35)
+ax3.set_ylabel("$\mathrm{merger\, ratio}$")
 
 #plt.spines['right'].set_color('darkorange')
 
