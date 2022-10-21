@@ -4,6 +4,10 @@ Exposes common paths useful for manipulating datasets and generating figures.
 """
 from pathlib import Path
 
+# add the folder ~bin to the $PATH varibale for latex usage in matplotlib
+import os
+os.environ["PATH"] += os.pathsep + str(Path.home() / "bin")
+
 # Absolute path to the top level of the repository
 root = Path(__file__).resolve().parents[2].absolute()
 
