@@ -8,3 +8,11 @@ overleaf:
   pull:
     - src/tex/ms.tex
     - src/tex/bib.bib
+
+datasets:
+  10.5281/zenodo.7224725:
+    contents:
+      2.79e12..00480_main_halo_total_age_fe.dat: src/data/2.79e12..00480_main_halo_total_age_fe.dat
+  10.5281/zenodo.7224272:
+    contents:
+      2.79e12_age_fe.dat: src/data/2.79e12_age_fe.dat
