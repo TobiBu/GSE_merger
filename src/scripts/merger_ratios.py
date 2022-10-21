@@ -81,7 +81,7 @@ ax.spines['right'].set_color('darkorange')
 ax.yaxis.label.set_color('darkorange')
 ax.tick_params(axis='y', colors='orange')
 ax.set_yticklabels([])
-ax.set_ylim(-.05,.25)
+ax.set_ylim(-.05,.35)
 
 # now g7.55e11
 data = pickle.load(open(paths.data / '7.55e11_merger_tree_data.dat','rb'))
@@ -98,7 +98,7 @@ ax1.spines['right'].set_color('darkorange')
 ax1.yaxis.label.set_color('darkorange')
 ax1.tick_params(axis='y', colors='orange')
 ax1.set_yticklabels([])
-ax1.set_ylim(-.05,.25)
+ax1.set_ylim(-.05,.35)
 
 
 # now we do g7.08e11
@@ -116,7 +116,7 @@ ax2.spines['right'].set_color('darkorange')
 ax2.yaxis.label.set_color('darkorange')
 ax2.tick_params(axis='y', colors='orange')
 ax2.set_yticklabels([])
-ax2.set_ylim(-.05,.25)
+ax2.set_ylim(-.05,.35)
 
 # now we do g8.26e11
 data = pickle.load(open(paths.data / '2.79e12_merger_tree_data.dat','rb'))
@@ -133,7 +133,7 @@ ax3.spines['right'].set_color('darkorange')
 ax3.yaxis.label.set_color('darkorange')
 ax3.tick_params(axis='y', colors='orange')
 ax3.set_yticklabels([])
-ax3.set_ylim(-.05,.25)
+ax3.set_ylim(-.05,.35)
 
 #plt.spines['right'].set_color('darkorange')
 
