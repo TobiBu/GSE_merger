@@ -93,9 +93,9 @@ for i, f in enumerate(gas_profile_files[::-1]):
 
 axl.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'), label='$\mathrm{metallicity\ gradient\ cold\ gas}$' )
 axl.text(7,-0.01,'g2.79e12',fontsize=30)
-axl.spines['right'].set_color('tab:blue')
-axl.yaxis.label.set_color('tab:blue')
-axl.tick_params(axis='y', colors='tab:blue')
+axl.spines['right'].set_color('#1f7764')
+axl.yaxis.label.set_color('#1f7764')
+axl.tick_params(axis='y', colors='#1f7764')
 
 ax = axl.twinx()
 data = pickle.load(open(paths.data / '2.79e12_rhalf.dat','rb'))
@@ -105,7 +105,7 @@ ax.plot(data['time'],data['rhalf_cold'],c='darkorange', label='$\mathrm{half\ ma
 
 ax.spines['right'].set_color('darkorange')
 ax.yaxis.label.set_color('darkorange')
-ax.tick_params(axis='y', colors='orange')
+ax.tick_params(axis='y', colors='darkorange')
 ax.set_yticklabels([])
 ax.set_ylim(-2,75)
 
