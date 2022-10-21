@@ -39,7 +39,7 @@ plt.rcParams['legend.edgecolor'] = 'lightgray'
 plt.rcParams['patch.linewidth'] = 3
 
 plt.rcParams.update({
-    "text.usetex": True,
+    "text.usetex": False,
     "font.family": "Helvetica"
 })
 
