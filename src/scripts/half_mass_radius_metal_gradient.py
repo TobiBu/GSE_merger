@@ -93,6 +93,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
 
 axl.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'), label='$\mathrm{metallicity\ gradient\ cold\ gas}$' )
 axl.text(7,-0.01,'g2.79e12',fontsize=30)
+axl.legend()
 
 ax = axl.twinx()
 data = pickle.load(open(paths.data / '2.79e12_rhalf.dat','rb'))
