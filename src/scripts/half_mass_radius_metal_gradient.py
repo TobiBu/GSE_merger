@@ -93,9 +93,10 @@ for i, f in enumerate(gas_profile_files[::-1]):
 
 axl.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'), label='$\mathrm{metallicity\ gradient\ cold\ gas}$' )
 axl.text(7,-0.01,'g2.79e12',fontsize=30)
-axl.legend()
+
 
 ax = axl.twinx()
+ax.plot([],[], label='$\mathrm{metallicity\ gradient\ cold\ gas}$' )
 data = pickle.load(open(paths.data / '2.79e12_rhalf.dat','rb'))
 ax.plot(data['time'],data['rhalf_cold'],c='darkorange', label='$\mathrm{half\ mass radius\ cold\ gas}$')
 #ax.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
