@@ -90,7 +90,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
     slopes.append(slope)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
-axl.plot(times[::-1], np.convolve(slopes, np.ones(N)/N, mode='same'), label='$\mathrm{metallicity\ gradient\ cold\ gas}$' )
+axl.plot(times, np.convolve(slopes, np.ones(N)/N, mode='same'), label='$\mathrm{metallicity\ gradient\ cold\ gas}$' )
 axl.text(7,-0.01,'g2.79e12',fontsize=30)
 
 ax = axl.twinx()
@@ -122,7 +122,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
     slopes.append(slope)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
-ax1l.plot(times[::-1], np.convolve(slopes, np.ones(N)/N, mode='same'))
+ax1l.plot(times, np.convolve(slopes, np.ones(N)/N, mode='same'))
 ax1l.text(7,-0.01,'g7.55e11',fontsize=30)
 
 ax1 = ax1l.twinx()
@@ -154,7 +154,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
     slopes.append(slope)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
-ax2l.plot(times[::-1], np.convolve(slopes, np.ones(N)/N, mode='same'))
+ax2l.plot(times, np.convolve(slopes, np.ones(N)/N, mode='same'))
 ax2l.text(7,-0.01,'g7.08e11',fontsize=30)
 
 ax2 = ax2l.twinx()
