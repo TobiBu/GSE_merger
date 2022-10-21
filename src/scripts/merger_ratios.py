@@ -78,7 +78,7 @@ axl.text(7,5e10,'g2.79e12',fontsize=30)
 axl.set_yscale('log')
 
 ax = axl.twinx()
-ax.plot(time,data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
+ax.plot(time[:-5],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
 
 ax.spines['right'].set_color('darkorange')
 ax.yaxis.label.set_color('darkorange')
@@ -95,7 +95,7 @@ axl.text(7,5e10,'g7.55e11',fontsize=30)
 axl.set_yscale('log')
 
 ax = axl.twinx()
-ax.plot(time,data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
+ax.plot(time[:-5],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
 
 ax.spines['right'].set_color('darkorange')
 ax.yaxis.label.set_color('darkorange')
@@ -113,7 +113,7 @@ axl.text(7,5e10,'g7.08e11',fontsize=30)
 axl.set_yscale('log')
 
 ax = axl.twinx()
-ax.plot(time,data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
+ax.plot(time[:-5],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
 
 ax.spines['right'].set_color('darkorange')
 ax.yaxis.label.set_color('darkorange')
@@ -130,7 +130,7 @@ axl.text(7,5e10,'g2.79e12',fontsize=30)
 axl.set_yscale('log')
 
 ax = axl.twinx()
-ax.plot(time,data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
+ax.plot(time[:-5],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
 
 ax.spines['right'].set_color('darkorange')
 ax.yaxis.label.set_color('darkorange')
