@@ -73,10 +73,12 @@ time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 axl.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 axl.text(7,5e10,'g2.79e12',fontsize=30)
 axl.set_yscale('log')
+axl.spines['right'].set_color('#1f77b4')
+axl.yaxis.label.set_color('#1f77b4')
+axl.tick_params(axis='y', colors='#1f77b4')
 
 ax = axl.twinx()
 ax.plot(time[:-5],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
-ax.legend()
 
 ax.spines['right'].set_color('darkorange')
 ax.yaxis.label.set_color('darkorange')
