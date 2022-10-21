@@ -123,7 +123,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
     slopes.append(slope)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
-ax1l.plot(times[2:-2], np.convolve(slopes, np.ones(N)/N, mode='valid'))
+ax1l.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'))
 ax1l.text(7,-0.01,'g7.55e11',fontsize=30)
 
 ax1 = ax1l.twinx()
