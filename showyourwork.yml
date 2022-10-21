@@ -16,3 +16,7 @@ datasets:
   10.5281/zenodo.7224272:
     contents:
       2.79e12_age_fe.dat: src/data/2.79e12_age_fe.dat
+
+dependencies:
+  src/scripts/feh_ofe.py:
+      - src/data/2.79e12_age_fe.dat
