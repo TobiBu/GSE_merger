@@ -37,7 +37,7 @@ plt.rcParams['patch.linewidth'] = 3
 
 plt.rcParams.update({
     "text.usetex": True,
-    "font.family": "Helvetica"
+    #"font.family": "Helvetica"
 })
 
 snaps = ['2.79e12.00292_gas_profile.dat','2.79e12.00480_gas_profile.dat']

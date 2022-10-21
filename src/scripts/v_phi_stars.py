@@ -37,7 +37,7 @@ plt.rcParams['patch.linewidth'] = 3
 
 plt.rcParams.update({
     "text.usetex": True,
-    "font.family": "Helvetica"
+    #"font.family": "Helvetica"
 })
 
 data_main = pickle.load(open(paths.data / '2.79e12..00292_main_halo_total_age_fe.dat','rb'))

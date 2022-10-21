@@ -40,7 +40,7 @@ plt.rcParams['patch.linewidth'] = 3
 
 plt.rcParams.update({
     "text.usetex": True,
-    "font.family": "Helvetica"
+    #"font.family": "Helvetica"
 })
 
 fig = plt.figure(figsize=(60,10))

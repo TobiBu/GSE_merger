@@ -38,7 +38,7 @@ plt.rcParams['patch.linewidth'] = 3
 
 plt.rcParams.update({
     "text.usetex": True,
-    "font.family": "Helvetica"
+    #"font.family": "Helvetica"
 })
 
 time_dict = pickle.load(open( paths.data / '2.79e12_time_dict.dat','rb'))
