@@ -18,6 +18,8 @@ datasets:
       2.79e12_age_fe.dat: src/data/2.79e12_age_fe.dat
 
 dependencies:
+  src/scripts/age_feh.py:
+      - src/data/2.79e12_age_fe.dat
   src/scripts/feh_ofe.py:
       - src/data/2.79e12_age_fe.dat
   src/scripts/v_phi_stars.py:
