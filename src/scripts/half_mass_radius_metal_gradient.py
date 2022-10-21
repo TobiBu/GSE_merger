@@ -177,7 +177,7 @@ ax2.set_ylim(-2,75)
 ax3l.text(7,-0.01,'g8.26e11',fontsize=30)
 
 ax3 = ax3l.twinx()
-#ax3.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
+ax3.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
 ax3.spines['right'].set_color('darkorange')
 ax3l.spines['right'].set_color('darkorange')
 ax3.yaxis.label.set_color('darkorange')
