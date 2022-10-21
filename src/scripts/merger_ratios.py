@@ -138,6 +138,6 @@ ax.tick_params(axis='y', colors='orange')
 ax.set_yticklabels([])
 ax.set_ylim(-2,75)
 
-plt.spines['right'].set_color('darkorange')
+#plt.spines['right'].set_color('darkorange')
 
 plt.savefig(paths.figures / 'merger_ratios.pdf', bbox_inches='tight')
