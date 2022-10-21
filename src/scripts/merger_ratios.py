@@ -85,7 +85,7 @@ ax.set_ylim(-.05,.25)
 
 # now g7.55e11
 data = pickle.load(open(paths.data / '7.55e11_merger_tree_data.dat','rb'))
-time = np.linspace(0,13.8, len(data['gas_mass']))
+time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 
 ax1l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 ax1l.text(7,5e10,'g7.55e11',fontsize=30)
@@ -103,7 +103,7 @@ ax1.set_ylim(-.05,.25)
 
 # now we do g7.08e11
 data = pickle.load(open(paths.data / '7.08e11_merger_tree_data.dat','rb'))
-time = np.linspace(0,13.8, len(data['gas_mass']))
+time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 
 ax2l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 ax2l.text(7,5e10,'g7.08e11',fontsize=30)
@@ -120,7 +120,7 @@ ax2.set_ylim(-.05,.25)
 
 # now we do g8.26e11
 data = pickle.load(open(paths.data / '2.79e12_merger_tree_data.dat','rb'))
-time = np.linspace(0,13.8, len(data['gas_mass']))
+time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 
 ax3l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 ax3l.text(7,5e10,'g2.79e12',fontsize=30)
