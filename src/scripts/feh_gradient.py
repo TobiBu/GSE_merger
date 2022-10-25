@@ -78,11 +78,11 @@ for snap in snaps:
 data = pickle.load(open( paths.data / '2.79e12.00292_cold_gas_profile.dat','rb'))
 ax.plot(data['bins'],data['feh'], color='darkblue')
 
-ax.set_ylim(-1.85,-0.2)
+ax.set_ylim(-1.85,-0.3)
 ax.set_xlim(-0.5,26)
 ax.set_ylabel("$\mathrm{[Fe/H]}$")
 #ax.set_xlabel("$\mathrm{radius\ [kpc]}$")
-ax.text(7.,-.35,"$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00292'])
+ax.text(7.,-.4,"$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00292'])
 ax.legend()
 
 # now second merger
@@ -110,7 +110,7 @@ ax1.set_xlim(-0.5,26)
 ax1.set_ylabel("$\mathrm{[Fe/H]}$")
 #ax1.set_yticklabels([])
 #ax1.set_xlabel("$\mathrm{radius\ [kpc]}$")
-ax1.text(7.,-.35,"$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00376'])
+ax1.text(7.,-.15,"$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00376'])
 ax1.legend()
 
 fig.savefig(paths.figures / "feh_gradient.pdf", bbox_inches='tight')
