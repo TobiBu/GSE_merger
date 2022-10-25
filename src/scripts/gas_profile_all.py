@@ -1,6 +1,5 @@
-import numpy as np
 import matplotlib.pylab as plt
-import pickle, glob, paths
+import pickle, paths
 
 import seaborn as sns
 plt.rcParams['figure.figsize'] = (15, 10)
@@ -48,9 +47,25 @@ plt.rcParams.update({
     'axes.formatter.use_mathtext': True # needed when using cm=cmr10 for normal text
 })
 
-data = pickle.load(open(paths.data / '2.79e12_rhalf.dat','rb'))
+data = pickle.load(open(paths./data / '2.79e12.00292_gas_profile.dat','rb'))
+data1 = pickle.load(open(paths./data / '2.79e12.00560_gas_profile.dat','rb'))
+plt.plot(data['bins'],(data['density']-data1['density'])/data['density'],label='$\mathrm{g2.79e12}$')
 
-plt.plot(data['time'],data['rhalf_cold'])
-plt.ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
-plt.xlabel("$\mathrm{time\ [Gyr]}$")
-plt.savefig(paths.figures / '279e12_gas_size.pdf', bbox_inches='tight')
+data = pickle.load(open(paths./data / '7.55e11.00272_gas_profile.dat','rb'))
+data1 = pickle.load(open(paths./data / '7.55e11.00472_gas_profile.dat','rb'))
+plt.plot(data['bins'],(data['density']-data1['density'])/data['density'],label='$\mathrm{g2.79e12}$')
+
+data = pickle.load(open(paths./data / '7.08e11.00160_gas_profile.dat','rb'))
+data1 = pickle.load(open(paths./data / '7.08e11.00360_gas_profile.dat','rb'))
+plt.plot(data['bins'],(data['density']-data1['density'])/data['density'],label='$\mathrm{g2.79e12}$')
+
+#data = pickle.load(open(paths./data / '2.79e12.00292_gas_profile_3d.dat','rb'))
+#data1 = pickle.load(open(paths./data / '2.79e12.00560_gas_profile_3d.dat','rb'))
+#plt.plot(data['bins'],(data['density']-data1['density'])/data['density'],label='$\mathrm{g2.79e12}$')
+
+#plt.ylim(-5,1)
+#plt.yscale('log')
+plt.ylabel("$\Delta\rho/\rho$")
+plt.xlabel("$\mathrm{radius\ [kpc]}$")
+plt.legend()
+plt.savefig(paths.figures / "gas_profile_2d.pdf", bbox_inches='tight')
