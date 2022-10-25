@@ -135,7 +135,7 @@ gas_profile_files = glob.glob('7.55e11.0????_cold_gas_profile.dat', root_dir=pat
 gas_profile_files.sort()
 
 before = time_dict['00272']
-after = time_dict['00472']
+after = time_dict['00520']
 ax1l.plot([before,before],[-.105,0.0],color='darkgray')
 ax1l.plot([after,after],[-.105,0.0],color='darkgray')
 
