@@ -38,12 +38,19 @@ plt.rcParams['legend.shadow'] = False
 plt.rcParams['legend.edgecolor'] = 'lightgray'
 plt.rcParams['patch.linewidth'] = 3
 
+#plt.rcParams.update({
+#    "text.usetex": True,
+#    "font.family": "Helvetica"
+#})
+
 plt.rcParams.update({
-    "text.usetex": True,
-    #"font.family": "Helvetica"
+    'font.family': 'serif',
+    'font.serif': 'cmr10',
+    'mathtext.fontset': 'cm',
+    'axes.formatter.use_mathtext': True # needed when using cm=cmr10 for normal text
 })
 
-fig = plt.figure(figsize=(60,10))
+fig = plt.figure(figsize=(45,7.5))
 gs = gridspec.GridSpec(1, 4, width_ratios=[1,1,1,1], height_ratios=[1])
 gs.update(hspace=0.0, wspace=0.0)
 axl = plt.subplot(gs[0])
@@ -73,18 +80,18 @@ time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 axl.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 axl.text(7,5e10,'g2.79e12',fontsize=30)
 axl.set_yscale('log')
-axl.spines['right'].set_color('#1f77b4')
+axl.spines['left'].set_color('#1f77b4')
 axl.yaxis.label.set_color('#1f77b4')
 axl.tick_params(axis='y', colors='#1f77b4')
 
 ax = axl.twinx()
 ax.plot(time[:-5],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
 
-ax.spines['right'].set_color('darkorange')
-ax.yaxis.label.set_color('darkorange')
+ax.spines['left'].set_visible(False)
+#ax.yaxis.label.set_color('darkorange')
 ax.tick_params(axis='y', colors='orange')
 ax.set_yticklabels([])
-ax.set_ylim(-.05,.35)
+ax.set_ylim(-.02,.35)
 
 # now g7.55e11
 data = pickle.load(open(paths.data / '7.55e11_merger_tree_data.dat','rb'))
@@ -92,16 +99,18 @@ time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 
 ax1l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 ax1l.text(7,5e10,'g7.55e11',fontsize=30)
-ax1 = ax1l.twinx()
+ax1l.tick_params(axis='y', colors='#1f77b4')
 ax1l.set_yscale('log')
 ax1l.set_yticklabels([])
+ax1 = ax1l.twinx()
+ax1.spines['left'].set_visible(False)
 ax1.plot(time[:-2],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
 
-ax1.spines['right'].set_color('darkorange')
-ax1.yaxis.label.set_color('darkorange')
+#ax1.spines['right'].set_color('darkorange')
+#ax1.yaxis.label.set_color('darkorange')
 ax1.tick_params(axis='y', colors='orange')
 ax1.set_yticklabels([])
-ax1.set_ylim(-.05,.35)
+ax1.set_ylim(-.02,.35)
 
 
 # now we do g7.08e11
@@ -110,16 +119,18 @@ time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 
 ax2l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 ax2l.text(7,5e10,'g7.08e11',fontsize=30)
-ax2 = ax2l.twinx()
+ax2l.tick_params(axis='y', colors='#1f77b4')
 ax2l.set_yscale('log')
 ax2l.set_yticklabels([])
+ax2 = ax2l.twinx()
+ax2.spines['left'].set_visible(False)
 ax2.plot(time[:-1],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
 
-ax2.spines['right'].set_color('darkorange')
-ax2.yaxis.label.set_color('darkorange')
+#ax2.spines['right'].set_color('darkorange')
+#ax2.yaxis.label.set_color('darkorange')
 ax2.tick_params(axis='y', colors='orange')
 ax2.set_yticklabels([])
-ax2.set_ylim(-.05,.35)
+ax2.set_ylim(-.02,.35)
 
 # now we do g8.26e11
 data = pickle.load(open(paths.data / '2.79e12_merger_tree_data.dat','rb'))
@@ -127,17 +138,18 @@ time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 
 ax3l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 ax3l.text(7,5e10,'g2.79e12',fontsize=30)
-ax3 = ax3l.twinx()
+ax3l.tick_params(axis='y', colors='#1f77b4')
 ax3l.set_yscale('log')
 ax3l.set_yticklabels([])
+ax3 = ax3l.twinx()
+ax3.spines['left'].set_visible(False)
+ax3.spines['right'].set_visible(False)
 ax3.plot(time[:-5],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
 
-ax3.spines['right'].set_color('darkorange')
+ax3l.spines['right'].set_color('darkorange')
 ax3.yaxis.label.set_color('darkorange')
 ax3.tick_params(axis='y', colors='orange')
-ax3.set_ylim(-.05,.35)
+ax3.set_ylim(-.02,.35)
 ax3.set_ylabel("$\mathrm{merger\, ratio}$")
-
-#plt.spines['right'].set_color('darkorange')
 
 plt.savefig(paths.figures / 'merger_ratios.pdf', bbox_inches='tight')

@@ -36,9 +36,17 @@ plt.rcParams['legend.shadow'] = False
 plt.rcParams['legend.edgecolor'] = 'lightgray'
 plt.rcParams['patch.linewidth'] = 3
 
+#plt.rcParams.update({
+#    "text.usetex": True,
+#    "font.family": "Helvetica"
+#})
+
+# set font to match LaTeX's Computer Modern
 plt.rcParams.update({
-    "text.usetex": True,
-    #"font.family": "Helvetica"
+    'font.family': 'serif',
+    'font.serif': 'cmr10',
+    'mathtext.fontset': 'cm',
+    'axes.formatter.use_mathtext': True # needed when using cm=cmr10 for normal text
 })
 
 time_dict = pickle.load(open( paths.data / '2.79e12_time_dict.dat','rb'))
