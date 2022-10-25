@@ -134,7 +134,7 @@ time_dict = pickle.load(open(paths.data / '7.55e11_time_dict.dat','rb'))
 gas_profile_files = glob.glob('7.55e11.0????_cold_gas_profile.dat', root_dir=paths.data)
 gas_profile_files.sort()
 
-before = time_dict['00336']
+before = time_dict['00360']
 after = time_dict['00520']
 ax1l.plot([before,before],[-.105,0.0],color='darkgray')
 ax1l.plot([after,after],[-.105,0.0],color='darkgray')
