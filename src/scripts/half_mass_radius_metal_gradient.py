@@ -175,8 +175,8 @@ gas_profile_files.sort()
 
 before = time_dict['00160']
 after = time_dict['00360']
-axl.plot([before,before],[-.105,0.0],color='darkgray')
-axl.plot([after,after],[-.105,0.0],color='darkgray')
+ax2l.plot([before,before],[-.105,0.0],color='darkgray')
+ax2l.plot([after,after],[-.105,0.0],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
