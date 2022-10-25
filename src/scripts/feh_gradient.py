@@ -80,8 +80,8 @@ ax.plot(data['bins'],data['feh'], color='darkblue')
 
 ax.set_ylim(-1.9,-0.2)
 ax.set_ylabel("$\mathrm{[Fe/H]}$")
-ax.set_xlabel("$\mathrm{radius\ [kpc]}$")
-ax.set_title("$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00292'])
+#ax.set_xlabel("$\mathrm{radius\ [kpc]}$")
+ax.text(12.5,-.3,"$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00292'])
 ax.legend()
 
 # now second merger
@@ -105,10 +105,10 @@ data = pickle.load(open( paths.data / '2.79e12.00376_cold_gas_profile.dat','rb')
 ax1.plot(data['bins'],data['feh'], color='darkblue')
 
 ax1.set_ylim(-1.9,-0.2)
-#ax1.ylabel("$\mathrm{[Fe/H]}$")
-ax1.set_yticklabels([])
-ax1.set_xlabel("$\mathrm{radius\ [kpc]}$")
-ax1.set_title("$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00376'])
+ax1.set_ylabel("$\mathrm{[Fe/H]}$")
+#ax1.set_yticklabels([])
+#ax1.set_xlabel("$\mathrm{radius\ [kpc]}$")
+ax1.text(12.5,-.3,"$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00376'])
 ax1.legend()
 
 fig.savefig(paths.figures / "feh_gradient.pdf", bbox_inches='tight')
