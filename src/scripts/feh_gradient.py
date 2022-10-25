@@ -85,7 +85,7 @@ ax.set_ylabel("$\mathrm{[Fe/H]}$")
 ax.text(7.,-.5,"$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00292'])
 ax.legend()
 
-locs, labels = plt.xticks()
+locs, labels = plt.yticks()
 
 # now second merger
 snaps = ['.00470','.00430','.00400','.00390','.00376']
@@ -109,7 +109,7 @@ ax1.plot(data['bins'],data['feh'], color='darkblue')
 
 ax1.set_ylim(-1.8,-0.001)
 ax1.set_xlim(-0.5,26)
-ax1.set_xticks(locs)
+ax1.set_yticks(locs)
 ax1.set_ylabel("$\mathrm{[Fe/H]}$")
 #ax1.set_yticklabels([])
 #ax1.set_xlabel("$\mathrm{radius\ [kpc]}$")
