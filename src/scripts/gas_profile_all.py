@@ -47,27 +47,27 @@ plt.rcParams.update({
     'axes.formatter.use_mathtext': True # needed when using cm=cmr10 for normal text
 })
 
-plt.plot([0,25],[0,0])
+plt.plot([0,25],[0,0], color='darkgray')
 
-data = pickle.load(open(paths.data / '2.79e12.00292_gas_profile.dat','rb'))
-data1 = pickle.load(open(paths.data / '2.79e12.00560_gas_profile.dat','rb'))
+data = pickle.load(open(paths.data / '2.79e12.00280_cold_gas_profile.dat','rb'))
+data1 = pickle.load(open(paths.data / '2.79e12.00480_cold_gas_profile.dat','rb'))
 plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g2.79e12}$')
 
-data = pickle.load(open(paths.data / '7.55e11.00272_gas_profile.dat','rb'))
-data1 = pickle.load(open(paths.data / '7.55e11.00472_gas_profile.dat','rb'))
-plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g2.79e12}$')
+data = pickle.load(open(paths.data / '7.55e11.00360_cold_gas_profile.dat','rb'))
+data1 = pickle.load(open(paths.data / '7.55e11.00520_cold_gas_profile.dat','rb'))
+plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g7.55e11}$')
 
-data = pickle.load(open(paths.data / '7.08e11.00160_gas_profile.dat','rb'))
-data1 = pickle.load(open(paths.data / '7.08e11.00360_gas_profile.dat','rb'))
-plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g2.79e12}$')
+data = pickle.load(open(paths.data / '7.08e11.00256_cold_gas_profile.dat','rb'))
+data1 = pickle.load(open(paths.data / '7.08e11.00356_cold_gas_profile.dat','rb'))
+plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g7.08e11}$')
 
-#data = pickle.load(open(paths.data / '2.79e12.00292_gas_profile_3d.dat','rb'))
-#data1 = pickle.load(open(paths.data / '2.79e12.00560_gas_profile_3d.dat','rb'))
+#data = pickle.load(open(paths.data / '2.79e12.00292_cold_gas_profile_3d.dat','rb'))
+#data1 = pickle.load(open(paths.data / '2.79e12.00560_cold_gas_profile_3d.dat','rb'))
 #plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g2.79e12}$')
 
 #plt.ylim(-5,1)
 #plt.yscale('log')
-plt.ylabel("$\Delta\\rho/\\rho$")
+plt.ylabel("$\Delta\\Sigma/\\Sigma$")
 plt.xlabel("$\mathrm{radius\ [kpc]}$")
 plt.legend()
 plt.savefig(paths.figures / "gas_profile_2d.pdf", bbox_inches='tight')
