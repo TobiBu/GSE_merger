@@ -85,7 +85,7 @@ ax.set_ylabel("$\mathrm{[Fe/H]}$")
 ax.text(7.,-.5,"$\mathrm{merger\, at\, }t=%.2f\, \mathrm{Gyr}$"%time_dict['00292'])
 ax.legend()
 
-locs, labels = ax.yticks()
+locs, labels = ax.get_yticks()
 
 # now second merger
 snaps = ['.00470','.00430','.00400','.00390','.00376']
