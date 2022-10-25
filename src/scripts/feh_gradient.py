@@ -51,8 +51,8 @@ plt.rcParams.update({
 
 time_dict = pickle.load(open( paths.data / '2.79e12_time_dict.dat','rb'))
 
-fig = plt.figure(figsize=(30, 10))
-gs = gridspec.GridSpec(1, 2, width_ratios=[1,1], height_ratios=[1])
+fig = plt.figure(figsize=(15, 20))
+gs = gridspec.GridSpec(1, 2, width_ratios=[1], height_ratios=[1,1])
 gs.update(hspace=0.0, wspace=0.0)
 ax = plt.subplot(gs[0])
 ax1 = plt.subplot(gs[1])
