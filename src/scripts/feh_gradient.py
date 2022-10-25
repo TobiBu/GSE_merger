@@ -107,9 +107,9 @@ for snap in snaps:
 data = pickle.load(open( paths.data / '2.79e12.00376_cold_gas_profile.dat','rb'))
 ax1.plot(data['bins'],data['feh'], color='darkblue')
 
-ax1.set_ylim(-1.8,-0.001)
 ax1.set_xlim(-0.5,26)
 ax1.set_yticks(locs)
+ax1.set_ylim(-1.8,-0.001)
 ax1.set_ylabel("$\mathrm{[Fe/H]}$")
 #ax1.set_yticklabels([])
 #ax1.set_xlabel("$\mathrm{radius\ [kpc]}$")
