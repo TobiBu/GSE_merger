@@ -74,7 +74,7 @@ ax2l.set_ylim(-.105,0.0)
 ax3l.set_ylim(-.105,0.0)
 
 snaps = ['2.79e12.00292_gas_profile.dat','2.79e12.00480_gas_profile.dat']
-labels = ['$\mathrm{before\, merger}$', '$\mathrm{after\, merger}$']
+labels = ["$\mathrm{before\, merger}$", "$\mathrm{after\, merger}$"]
 
 for snap, label in zip(snaps, labels):
 
