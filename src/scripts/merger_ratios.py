@@ -144,7 +144,7 @@ ax3l.set_yticklabels([])
 ax3 = ax3l.twinx()
 ax3.spines['left'].set_visible(False)
 ax3.spines['right'].set_visible(False)
-ax3.plot(time[:-5],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
+ax3.plot(time[:-1],data['gas_ratio'],c='darkorange', label='$\mathrm{merger\ ratio\ gas}$')
 
 ax3l.spines['right'].set_color('darkorange')
 ax3.yaxis.label.set_color('darkorange')
