@@ -1,5 +1,6 @@
 import matplotlib.pylab as plt
 import pickle, paths
+import matplotlib.gridspec as gridspec
 
 import seaborn as sns
 plt.rcParams['figure.figsize'] = (15, 10)
