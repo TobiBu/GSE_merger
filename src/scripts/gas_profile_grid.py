@@ -83,7 +83,7 @@ for snap, label in zip(snaps, labels):
 
 #plt.ylim(-5,1)
 plt.yscale('log')
-plt.ylabel("$\\rho\mathrm{[M_\odot/kpc^2]}$")
+plt.ylabel("$\rho\mathrm{[M_\odot/kpc^2]}$")
 plt.xlabel("$\mathrm{radius\ [kpc]}$")
 plt.legend()
 plt.savefig(paths.figures / "2.79e12_gas_profile_2d.pdf", bbox_inches='tight')
