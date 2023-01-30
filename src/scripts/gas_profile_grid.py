@@ -47,31 +47,42 @@ plt.rcParams.update({
     'axes.formatter.use_mathtext': True # needed when using cm=cmr10 for normal text
 })
 
-plt.plot([0,25],[0,0], color='darkgray')
+fig = plt.figure(figsize=(45,7.5))
+gs = gridspec.GridSpec(1, 4, width_ratios=[1,1,1,1], height_ratios=[1])
+gs.update(hspace=0.0, wspace=0.0)
+axl = plt.subplot(gs[0])
+ax1l = plt.subplot(gs[1])
+ax2l = plt.subplot(gs[2])
+ax3l = plt.subplot(gs[3])
+axl.set_ylabel("$\Delta\rho\mathrm{[M_\odot/kpc^2]}$")
+ax1l.set_yticklabels([])
+ax2l.set_yticklabels([])
+ax3l.set_yticklabels([])
+axl.set_xlabel("$\mathrm{radius\ [kpc]}$")
+ax1l.set_xlabel("$\mathrm{radius\ [kpc]}$")
+ax2l.set_xlabel("$\mathrm{radius\ [kpc]}$")
+ax3l.set_xlabel("$\mathrm{radius\ [kpc]}$")
 
-data = pickle.load(open(paths.data / '2.79e12.00280_cold_gas_profile.dat','rb'))
-data1 = pickle.load(open(paths.data / '2.79e12.00480_cold_gas_profile.dat','rb'))
-plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g2.79e12}$')
+axl.set_ylim(-.105,0.0)
+#axl.set_xlim(0,13.9)
+#ax1l.set_xlim(0,13.9)
+ax1l.set_ylim(-.105,0.0)
+#ax2l.set_xlim(0,13.9)
+ax2l.set_ylim(-.105,0.0)
+#ax3l.set_xlim(0,13.9)
+ax3l.set_ylim(-.105,0.0)
 
-data = pickle.load(open(paths.data / '8.26e11.00530_cold_gas_profile.dat','rb'))
-data1 = pickle.load(open(paths.data / '8.26e11.00710_cold_gas_profile.dat','rb'))
-plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g7.55e11}$')
+snaps = ['2.79e12.00292_gas_profile.dat','2.79e12.00480_gas_profile.dat']
+labels = ['$\mathrm{before\, merger}$', '$\mathrm{after\, merger}$']
 
-data = pickle.load(open(paths.data / '7.55e11.00360_cold_gas_profile.dat','rb'))
-data1 = pickle.load(open(paths.data / '7.55e11.00520_cold_gas_profile.dat','rb'))
-plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g7.55e11}$')
+for snap, label in zip(snaps, labels):
 
-data = pickle.load(open(paths.data / '7.08e11.00256_cold_gas_profile.dat','rb'))
-data1 = pickle.load(open(paths.data / '7.08e11.00356_cold_gas_profile.dat','rb'))
-plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g7.08e11}$')
-
-#data = pickle.load(open(paths.data / '2.79e12.00292_cold_gas_profile_3d.dat','rb'))
-#data1 = pickle.load(open(paths.data / '2.79e12.00560_cold_gas_profile_3d.dat','rb'))
-#plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g2.79e12}$')
+    data = pickle.load(open(paths.data / snap,'rb'))
+    plt.plot(data['bins'],data['density'],label=label)
 
 #plt.ylim(-5,1)
-#plt.yscale('log')
-plt.ylabel("$\Delta\\Sigma/\\Sigma$")
+plt.yscale('log')
+plt.ylabel("$\\rho\mathrm{[M_\odot/kpc^2]}$")
 plt.xlabel("$\mathrm{radius\ [kpc]}$")
 plt.legend()
-plt.savefig(paths.figures / "gas_profile_2d.pdf", bbox_inches='tight')
+plt.savefig(paths.figures / "2.79e12_gas_profile_2d.pdf", bbox_inches='tight')

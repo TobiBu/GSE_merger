@@ -122,7 +122,46 @@ ax.tick_params(axis='y', colors='darkorange')
 ax.set_yticklabels([])
 ax.set_ylim(-2,75)
 
-# now g7.55e11
+# now g8.26e11
+slopes = []
+times = []
+
+l = 2
+r = -7
+
+time_dict = pickle.load(open(paths.data / '8.26e11_time_dict.dat','rb'))
+
+gas_profile_files = glob.glob('8.26e11.0????_cold_gas_profile.dat', root_dir=paths.data)
+gas_profile_files.sort()
+
+before = time_dict['00530']
+after = time_dict['00710']
+ax1l.plot([before,before],[-.105,0.0],color='darkgray')
+ax1l.plot([after,after],[-.105,0.0],color='darkgray')
+
+for i, f in enumerate(gas_profile_files[::-1]):
+    data = pickle.load(open(paths.data / f,'rb'))
+    slope, intercept, r_value, p_value, std_err = stats.linregress(data['bins'][l:r],data['feh'][l:r])
+    slopes.append(slope)
+    times.append(time_dict[f.split('_')[0].split('.')[-1]])
+
+ax1l.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'))
+ax1l.text(7,-0.01,'g8.26e11',fontsize=30)
+ax1l.tick_params(axis='y', colors='#1f77b4')
+
+ax1 = ax1l.twinx()
+data = pickle.load(open(paths.data / '8.26e11_rhalf.dat','rb'))
+ax1.plot(data['time'],data['rhalf_cold'],c='darkorange')
+
+ax.spines['left'].set_visible(False)
+ax1.spines['right'].set_color('darkorange')
+ax1.yaxis.label.set_color('darkorange')
+ax.tick_params(axis='y', colors='darkorange')
+ax1.set_yticklabels([])
+ax1.set_ylim(-2,75)
+
+
+# now we do g7.55e11
 slopes = []
 times = []
 
@@ -136,8 +175,8 @@ gas_profile_files.sort()
 
 before = time_dict['00360']
 after = time_dict['00520']
-ax1l.plot([before,before],[-.105,0.0],color='darkgray')
-ax1l.plot([after,after],[-.105,0.0],color='darkgray')
+ax2l.plot([before,before],[-.105,0.0],color='darkgray')
+ax2l.plot([after,after],[-.105,0.0],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -145,21 +184,21 @@ for i, f in enumerate(gas_profile_files[::-1]):
     slopes.append(slope)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
-ax1l.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'))
-ax1l.text(7,-0.01,'g7.55e11',fontsize=30)
-ax1l.tick_params(axis='y', colors='#1f77b4')
+ax2l.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'))
+ax2l.text(7,-0.01,'g7.55e11',fontsize=30)
+ax2l.tick_params(axis='y', colors='#1f77b4')
 
-ax1 = ax1l.twinx()
+ax2 = ax2l.twinx()
 data = pickle.load(open(paths.data / '7.55e11_rhalf.dat','rb'))
-ax1.plot(data['time'],data['rhalf_cold'],c='darkorange')
+ax2.plot(data['time'],data['rhalf_cold'],c='darkorange')
+#ax2.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
 
-ax.spines['left'].set_visible(False)
-ax1.spines['right'].set_color('darkorange')
-ax1.yaxis.label.set_color('darkorange')
-ax.tick_params(axis='y', colors='darkorange')
-ax1.set_yticklabels([])
-ax1.set_ylim(-2,75)
-
+ax2.spines['left'].set_visible(False)
+ax2.spines['right'].set_color('darkorange')
+ax2.yaxis.label.set_color('darkorange')
+ax2.tick_params(axis='y', colors='darkorange')
+ax2.set_yticklabels([])
+ax2.set_ylim(-2,75)
 
 # now we do g7.08e11
 slopes = []
@@ -175,8 +214,8 @@ gas_profile_files.sort()
 
 before = time_dict['00256']
 after = time_dict['00356']
-ax2l.plot([before,before],[-.105,0.0],color='darkgray')
-ax2l.plot([after,after],[-.105,0.0],color='darkgray')
+ax3l.plot([before,before],[-.105,0.0],color='darkgray')
+ax3l.plot([after,after],[-.105,0.0],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -184,28 +223,16 @@ for i, f in enumerate(gas_profile_files[::-1]):
     slopes.append(slope)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
-ax2l.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'))
-ax2l.text(7,-0.01,'g7.08e11',fontsize=30)
-ax2l.tick_params(axis='y', colors='#1f77b4')
-
-ax2 = ax2l.twinx()
-data = pickle.load(open(paths.data / '7.08e11_rhalf.dat','rb'))
-ax2.plot(data['time'],data['rhalf_cold'],c='darkorange')
-#ax2.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
-
-ax2.spines['left'].set_visible(False)
-ax2.spines['right'].set_color('darkorange')
-ax2.yaxis.label.set_color('darkorange')
-ax2.tick_params(axis='y', colors='darkorange')
-ax2.set_yticklabels([])
-ax2.set_ylim(-2,75)
-
-# now we do g8.26e11
-ax3l.text(7,-0.01,'g8.26e11',fontsize=30)
+ax3l.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'))
+ax3l.text(7,-0.01,'g7.08e11',fontsize=30)
 ax3l.tick_params(axis='y', colors='#1f77b4')
-ax3l.spines['right'].set_visible(False)
+#ax3l.spines['right'].set_visible(False)
 
 ax3 = ax3l.twinx()
+data = pickle.load(open(paths.data / '7.08e11_rhalf.dat','rb'))
+ax3.plot(data['time'],data['rhalf_cold'],c='darkorange')
+#ax2.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
+
 ax3.spines['left'].set_visible(False)
 ax3.set_ylabel("$R_{\mathrm{half}}\ \mathrm{[kpc]}$")
 ax3.spines['right'].set_color('darkorange')
