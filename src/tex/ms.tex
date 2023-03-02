@@ -301,14 +301,38 @@ The existence of the GSE merger and its strong impact on the structure of the pr
 
 Thanks to recent advances in computing power and progress in numerical methods modern cosmological zoom simulations now meet the aforementioned requirements and are able to model individual MW-mass galaxies by sampling varying environments and formation scenarios (e.g. \citealt{Sawala2016, Grand2017, Buck2020, Font2020, Applebaum2021, Agertz2020Vintergatan, Bird2021, Khoperskov2022-1InSitu, Wetzel2022}). This enables us to reconstruct our Galaxy's formation history by linking the occurrence of chemodynamical patterns at $z=0$ to specific events in the Galaxy's (e.g. \citealt{Bignone2019, Mackereth2019, Fattahi2019, Grand2020, Elias2020, Dillamore2022, Khoperskov2022-2Accreted, Khoperskov2022-3Metallicity, Pagnini2022, Rey2022}).
 
-While GSE's strong impact on MW's stellar halo is by now well established, more recently studies have further investigated its defining influence on the formation of MW's thin and thick disk \citep[e.g.]{Grand2020,Ciuca2022,Orkney2022}. These studies suggest that the GSE merger strongly shaped the formation of MW's thick disk agreeing with thick disk formation scenarios from early simulation results by \cite{Brook_2004, Brook_2006}. The gas-rich merger has a two-fold effect on MW's stellar disk: (i) Firstly, it heats part of the existing proto-disc stars dynamically ejecting them into the halo and creating the Splash. (ii) Secondly, the merger provides fresh gas to the central galactic regions triggering a starburst that eventually forms the younger thick disc. After the merge, the thin disc then forms from the accretion of metal-poor gas in an inside-out, upside-down fashion \citep[e.g.,][]{Bird2013, Grand2018, Buck2020a}. \citet{Ciuca_2021} qualitatively confirmed this picture using APOGEE DR14 data and selecting stellar populations around the solar radius. 
+While GSE's strong impact on MW's stellar halo is by now well established, more recently studies have further investigated its defining influence on the formation of MW's thin and thick disk \citep[e.g.]{Grand2020,Ciuca2022,Orkney2022,Rey2023}. These studies suggest that the GSE merger strongly shaped the formation of MW's thick disk agreeing with thick disk formation scenarios from early simulation results by \cite{Brook_2004, Brook_2006}. The gas-rich merger has a two-fold effect on MW's stellar disk: (i) Firstly, it heats part of the existing proto-disc stars dynamically ejecting them into the halo and creating the Splash. (ii) Secondly, the merger provides fresh gas to the central galactic regions triggering a starburst that eventually forms the younger thick disc. After the merge, the thin disc then forms from the accretion of metal-poor gas in an inside-out, upside-down fashion \citep[e.g.,][]{Bird2013, Grand2018, Buck2020a}. \citet{Ciuca_2021} qualitatively confirmed this picture using APOGEE DR14 data and selecting stellar populations around the solar radius. 
 
-Interestingly, when inferring the birth radii of MW disk stars, \citet{Lu2021} found a steepening of the metallicity gradient at the time of the GSE merger using data from LAMOST combined with {\it Gaia} eDR3. Here we use the NIHAO-UHD suite \citep{Buck2020} of cosmological hydrodynamical siumulations of MW-mass galaxies in order to investigate the influence of early merger events on the chemodynamics of the stellar disk. By using 4 different simulations from the NIHAO-UHD suite we investigate independently sampled environments that follow 4 different formation scenarios. Especially we focus on the frequency of massive early mergers and their detailed impact on the formation of the stellar disk. This paper is tructures as follows: In \S 2 we describe the simulations on which we base our analysis, followed by a presentation of our results in \S 3. In \S 4 we discuss and conclude our findings.
+Interestingly, when inferring the birth radii of MW disk stars, \citet{Lu2021} found a steepening of the metallicity gradient at the time of the GSE merger using data from LAMOST combined with {\it Gaia} eDR3. Here we use the NIHAO-UHD suite \citep{Buck2020} of cosmological hydrodynamical simulations of MW-mass galaxies in order to investigate the influence of early merger events on the chemo-dynamics of the stellar disk. By using 4 different simulations from the NIHAO-UHD suite we investigate independently sampled environments that follow 4 different formation scenarios. Especially we focus on the frequency of massive early mergers and their detailed impact on the formation of the stellar disk. This paper is structures as follows: In \S 2 we describe the simulations on which we base our analysis, followed by a presentation of our results in \S 3. In \S 4 we discuss and conclude our findings.
+
+\begin{figure*}
+    \script{merger_ratios.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/merger_ratios.pdf}
+        \vspace*{-1.75em}
+        \caption{Gas mass (blue line, left axis) and gas merger ratio (orange line, right axis) as a function of time. We identify several gas rich mergers that contribute around 10\% of gas to the main galaxy at various times of 2-4 Gyr and a late time merger starting around 9.5 Gyr that contributes 10\% of gas and continues for several peri-center passages and goes on for $\sim2$ Gyr.
+        }
+        \label{fig:merger_ratio}
+    \end{centering}
+\end{figure*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methods} \label{sec:simulation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+For this work we use four simulations from the NIHAO-UHD suite \citep{Buck2020a} part of the Numerical Investigation of a Hundred Astronomical Objects (NIHAO) simulation suite \citep{Wang2015}. Parts of this simulation suite have previously been used to study the build-up of MW's peanut-shaped bulge \citep{Buck2018,Buck2019}, investigate the stellar bar properties \citep{Hilmi2020}, infer the MW's dark halo spin \citep{Obreja2022}, study the dwarf galaxy inventory of MW mass galaxies \citep{Buck2019a} or investigate the age-metallicity relation of MW disk stars \citep{Lu2022} including the chemical bimodality of disk stars \citep{Buck2020}, their abundances \citep{Lu2022a} and the origin of very metal-poor stars inside the stellar disk \citep{Sestito2021}.
+Comparing the properties of these galaxies to observations of the MW and local disk galaxies from the SPARC data \citep{Lelli2016} \citet{Buck2020a} showed that simulated galaxy properties agree well with observations.
+
+The simulations assume cosmological parameters from the \cite{Planck}, namely: \OmegaM= 0.3175, \OmegaL= 0.6825, \Omegab= 0.049, H${_0}$ = 67.1\kms\Mpc$^{-1}$, \sig8 = 0.8344. Initial conditions are created the same way as for the original NIHAO runs \citep[see][]{Wang2015} using a modified version of the \texttt{GRAFIC2} package \citep{Bertschinger2001,Penzo2014}. The mass resolution of these simulation ranges between $m_{\rm dark}\sim1.5 - 5.1\times10^5 \Msun$ for dark matter particles and $m_{\rm gas}\sim2.8 - 9.4\times10^4 \Msun$ for the gas particles. The corresponding force softenings are $\epsilon_{\rm dark}=414 - 620$ pc for the dark matter and $\epsilon_{\rm gas}=177 - 265$ pc for the gas and star particles. However, the adaptive smoothing length scheme implies that $h_{\rm  smooth}$ can be as small as $\sim30$ pc in the disk mid-plane. Stellar particles are born with an initial mass of $1/3\times m_{\rm{gas}}$ and are subject to massloss according to stellar evolution models as detailed in \citet{Stinson2013}. 
+The simulation setup, star formation and feedback implementations are described in detail in the introductory paper \citep{Buck2020a} but for completeness we summarise them below. 
+
+Simulations are performed with the modern smoothed particle hydrodynamics (SPH) solver {\texttt{GASOLINE2}} \citep{Wadsley2017} including substantial updates to the hydrodynamics as described in \citet{Keller2014}. {\texttt{GASOLINE2}} implements cooling via hydrogen, helium, and various metal-lines following \citet{Shen2010} using look-up tables calculated with \texttt{cloudy} \citep[version 07.02;][]{Ferland1998} and including photo-heating from the \citet{Haardt2005} UV background\footnote{For details on the impact of the UV background on galaxy formation see the recent study by \citet{Obreja2019}}. Star formation proceeds in cold (T $< 15,000$K), dense ($n_{\rm  th}  >  10.3$cm$^{-3}$) gas and is implemented as described in \citet{Stinson2006}. \citet{Buck2019a} showed that with this kind of star formation model only a high value of $n_{\rm  th}>10$cm$^{-3}$ \citep[see also][for an extended parameter study]{Dutton2019,Dutton2020} is able to reproduce the clustering of young star clusters as observed in the Legacy Extragalactic UV Survey (LEGUS) \citep{Calzetti2015,Grasha2017}.
+
+Following \citet{Stinson2013} two modes of stellar feedback are implemented: (i) the energy input from young massive stars, e.g. stellar winds and photo ionization, prior to any supernovae explosions, thus termed \textit{early stellar feedback (ESF)}. This mode consists of the total stellar luminosity ($2 \times 10^{50}$ erg of thermal energy per $M_{\odot}$) of the entire stellar population with an efficiency for coupling the energy input of $\epsilon_{\rm ESF}=13\%$ \citep{Wang2015}. (ii) supernova explosions implemented using the blastwave formalism as described in \citet{Stinson2006} and making use of a delayed cooling formalism for particles inside the blast region following \citet{McKee1977} in order to account for the adiabatic expansion of the supernova.
+Finally, we adopted a metal diffusion algorithm between particles as described in \citet{Wadsley2008}.
+
 
 %\begin{figure}
 %    \script{half_mass_radius_gas.py}
@@ -321,29 +345,32 @@ Interestingly, when inferring the birth radii of MW disk stars, \citet{Lu2021} f
 %    \end{centering}
 %\end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results} \label{sec:results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure*}
-    \script{merger_ratios.py}
-    \begin{centering}
-        \includegraphics[width=\linewidth]{figures/merger_ratios.pdf}
-        \caption{Gas mass (blue line, left axis) and merger ratio (orange line, right axis) as a function of time. We identify several gas rich mergers that contribute around 10\% of gas to the main galaxy at various times of 2-4 Gyr and a late time merger starting around 9.5 Gyr that contributes 10\% of gas and continues for several pericenter passages and goes on for $\sim2$ Gyr.
-        }
-        \label{fig:merger_ratio}
-    \end{centering}
-\end{figure*}
-
-
+\subsection{The impact of gas rich merger on the metallicity gradient} \label{sec:merger}
+We start our analysis on the influence of Gaia-Sausage-Enceladus-like merger
+events on the chemo-dynamics of MW-like galaxy disks by looking at the merger history of the four galaxies. Figure~\ref{fig:merger_ratio} shows the cumulative gas mass growth (blue line, left axis) accompanied by the gaseous merger ratio (orange line, right axis) defined as the ratio of gas mass of the merging satellite over the gas mass of the main galaxy. We see that after an initial phase ($0-\sim2.5$ Gyr) of rapid gas mass growth accompanied by violent, relatively gas rich mergers there are several other mergers at later times that contribute more than 10\% in gas leading to sudden jumps in the gas mass of the main galaxy (blue line). 
+Especially for g2.79e12 (left most panel) and g7.08e11 (right most panel) we see some late time ($\sim10$ Gyr) gas rich merger while the other two galaxies do not show any gas rich merger after $5$ Gyr for g8.26e11 and $7$ Gyr for g7.55e11.
 
 \begin{figure*}
     \script{half_mass_radius_metal_gradient.py}
     \begin{centering}
      \includegraphics[width=\linewidth]{figures/half_mass_radius_metal_gradient.pdf}
+        \vspace*{-1.75em}
         \caption{
-            Half mass radius of the cold gas (orange line, right axis) and the metallicity gradient (blue line, left axis) as a function of time. The sharp increases in the cold gas size around the times of gas rich mergers coincide with a sudden steepening of the metallicity gradient of $\sim0.02$ dex/kpc. The addition of relatively unenriched cold gas by the merging satellite leads to a sudden increase of the star-forming cold gas  mass in the outskirts of the galaxies while the central parts are unaffected. This steepens the gradient.
+            Half mass radius (orange line, right axis) and metallicity gradient (blue line, left axis) of the cold gas as a function of time. The sharp increases in the cold gas size around the times of gas rich mergers coincide with a sudden steepening of the metallicity gradient of $\sim0.02$ dex/kpc. The addition of relatively unenriched cold gas by the merging satellite leads to a sudden increase of the star-forming cold gas  mass in the outskirts of the galaxies while the central parts are unaffected. This steepens the gradient.
         }
         \label{fig:half_mass}
     \end{centering}
 \end{figure*}
+
+The sudden increase of gas mass due to these gas rich merger leads to a sudden increase in the half mass radius ($\gsim20$ kpc) of the cold gas disk of the main galaxy as the orange line (right axis) in Figure~\ref{fig:half_mass} shows. Simultaneously we plot the metallicity gradient of the cold gas disk of the main galaxy as a function of time (blue line in Fig.~\ref{fig:half_mass}, left axis) as measured by fitting a straight line to the radial metallicity profile omitting the central $2.5$ kpc. In order to minimize short time scale fluctuations we plot the running average with a window size of 10 corresponding to a time window of $\sim600$Myr. 
+
+We find that the time evolution of the metallicity gradient in the galaxies shows a rather complex behaviour. Galaxies g2.79e12 and g8.26e11 show a fast flattening of the initial metallicity gradient at early times ($\lesssim2$ Gyr and $\lesssim 2.5$ Gyr) from initially $-0.08$ dex/kpc to $-0.04$ dex/kpc while g7.55e11 and g7.08e11 start out already with a shallow gradient of $\sim-0.05$ and $\sim-0.04$.
+Common to all four galaxies we find a steepening of the metallicity gradient by at least $0.02$ dex/kpc over a time frame of $\sim1$ Gyr at times where the gas disk size rapidly increases (marked with gray vertical lines) due to the gas mass increase of the merging satellites. After the steepening happened, the gradient flattens again by $\sim0.01-0.02$ dex/kpx over roughy the same time frame except for g2.79e12 for which the gradient continues to steepen after the merger up to a maximum of $\sim-0.1$ dex/kpc. Only after another $\sim1.5$ Gyr the gradient starts to quickly flatten again until the present day. The late time evolution of the gradient on all four galaxies is comparatively weak but it consistently continues to flatten with at most a decrease of the gradient of $\sim0.02$ dex/kpc over a time of $\sim6-7$ Gyr.
+
 
 \begin{figure}
     \script{gas_profile_all.py}
@@ -356,18 +383,52 @@ Interestingly, when inferring the birth radii of MW disk stars, \citet{Lu2021} f
     \end{centering}
 \end{figure}
 
+\subsection{The physical mechanism behind a steepening of the metallicity gradient}
+\label{sec:steepening}
+
+A sudden steepening of the galactic metallicity gradient is unexpected and has been deemed not possible (reference??? Ivan, any clues?). The physical reason for a steepening of the metallicity gradient might be a dilution of the outer disk metallicity by the fresh, unenriched gas brought in by the merging satellite, the continued or preferential enrichment of the galactic center or a combination of both. A dilution scenario might be expected from the general lower metallicity of low mass satellites compared to MW-mass galaxies owing to the shape of the stellar mass-metallicity relation and has previously been suggested for the creation of the chemical bimodality of the MW's stellar disk \citep[e.g.][]{Buck2020}.
+
+In order to investigate the cause of the strong steepening of the metallicity gradient in our simulations we first plot in Figure~\ref{fig:surf_den} where in the disk the accreted gas mostly contributes. Figure~\ref{fig:surf_den} plots the relative change of cold gas surface mass density radial profile before the gas rich merger and after the merger finished as indicated by the gray lines in Figure~\ref{fig:half_mass}. This figure reveals an interesting finding. Consistently across all four galaxies the surface mass density of cold gas in the inner $5$ kpc is roughly constant or decreases slightly. Outside of $5$ kpc the surface mass density increases by $\sim75$ \% up to $\sim200$\%.
+
+\textcolor{red}{make same figure for relative metallicity change or similar to buck2020 Fig. 8 metallicity in different radii but normalized to central bin}
 
 \begin{figure}
-    \script{v_phi.py}
+    \script{feh_gradient.py}
     \begin{centering}
-        \includegraphics[width=\linewidth]{figures/2.79e12_v_phi_gas.pdf}
+        \includegraphics[width=\linewidth]{figures/feh_gradient.pdf}
         \caption{
-            Histogram of the cold gas velocity in the disk plane, $v_\phi$, before and after the merger. The peak of the $v_\phi$ distribution shifts from 73 km/s before the merger to 140 km/s after the merger, almost doubling the rotation speed of the cold gas disk.
+            Metallicity gradient of the cold gas disk during the merger events. We find that the contribution of additional metal poor gas lowers the metallicity in the outskirts of the disk effectively steepening the metallicity gradient by $\sim 0.1$ dex.
         }
-        \label{fig:v_phi}
+        \label{fig:feh_grad}
     \end{centering}
 \end{figure}
 
+\begin{figure*}
+    \script{enrichment_evolution.py}
+    \begin{centering}
+        \includegraphics[width=\linewidth]{figures/enrichment_evolution.pdf}
+        \caption{
+            some caption
+        }
+        \label{fig:feh_evolution}
+    \end{centering}
+\end{figure*}
+
+%\begin{figure}
+%    \script{v_phi.py}
+%    \begin{centering}
+%        \includegraphics[width=\linewidth]{figures/2.79e12_v_phi_gas.pdf}
+%        \caption{
+%            Histogram of the cold gas velocity in the disk plane, $v_\phi$, before and after the merger. The peak of the $v_\phi$ distribution shifts from 73 km/s before the merger to 140 km/s after the merger, almost doubling the rotation speed of the cold gas disk.
+%        }
+%        \label{fig:v_phi}
+%    \end{centering}
+%\end{figure}
+
+\subsection{The impact on the age-metallicity relation and the [O/Fe] vs. [Fe/H] plane}
+\label{sec:g2.79e12}
+
+We now turn to investigate the question where the early gas rich mergers appear in the age metallicity relation and the [O/Fe] vs. [Fe/H] plane. To this extent we focus on the galaxy g2.79e12 for which the steepening of the metallicity gradient is strongest. Figure~\ref{fig:mdf} shows the metallicity distribution function (MDF) for gas (orange histogram) and stars (blue histogram) of three gas rich satellites that merge with the main galaxy at $2.02$ Gyr and $2.57$ Gyr in comparison to the MDF of gas (gray histogram) and stars (black histogram) in the central galaxy. 
 
 \begin{figure*}
     \script{mdf.py}
@@ -381,22 +442,7 @@ Interestingly, when inferring the birth radii of MW disk stars, \citet{Lu2021} f
 \end{figure*}
 
 
-\begin{figure}
-    \script{feh_gradient.py}
-    \begin{centering}
-        \includegraphics[width=\linewidth]{figures/feh_gradient.pdf}
-        \caption{
-            Metallicity gradient of the cold gas disk during the merger events. We find that the contribution of additional metal poor gas lowers the metallicity in the outskirts of the disk effectively steepening the metallicity gradient by $\sim 0.1$ dex.
-        }
-        \label{fig:feh_grad}
-    \end{centering}
-\end{figure}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results} \label{sec:results}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{figure*}
@@ -421,17 +467,6 @@ Interestingly, when inferring the birth radii of MW disk stars, \citet{Lu2021} f
     \end{centering}
 \end{figure*}
 
-
-
-
-
-
-
-\subsection{some different elements [X/Fe] vs. [Fe/H]}
-do different elements give us insight into different formation epochs of the MW?
-detailed galactic archeology is left for future work.
-
-\subsection{relative contribution of different enrichment channels in L* galaxies: SNII vs. AGB vs. SNIa}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -462,18 +497,18 @@ This research made use of the {\sc{pynbody}} \citet{pynbody} package to analyze 
 
 \appendix
 
-\section{Rotation velocity of stars}
+%\section{Rotation velocity of stars}
 
-\begin{figure}
-    \script{v_phi_stars.py}
-    \begin{centering}
-        \includegraphics[width=\linewidth]{figures/2.79e12_v_phi_stars.pdf}
-        \caption{
-            Same as Fig.~\ref{fig:v_phi} but for the stellar rotation velocity in the disk plane, $v_\phi$, before and after the merger. The peak of the $v_\phi$ distribution shifts from 27 km/s before the merger to 66 km/s after the merger, more than doubling the rotation speed of the stellar disk.
-        }
-        \label{fig:v_phi_stars}
-    \end{centering}
-\end{figure}
+%\begin{figure}
+%    \script{v_phi_stars.py}
+%    \begin{centering}
+%        \includegraphics[width=\linewidth]{figures/2.79e12_v_phi_stars.pdf}
+%        \caption{
+%            Same as Fig.~\ref{fig:v_phi} but for the stellar rotation velocity in the disk plane, $v_\phi$, before and after the merger. The peak of the $v_\phi$ distribution shifts from 27 km/s before the merger to 66 km/s after the merger, more than doubling the rotation speed of the stellar disk.
+%        }
+%        \label{fig:v_phi_stars}
+%    \end{centering}
+%\end{figure}
 
 \section{Oxygen abundance distribution}
 
