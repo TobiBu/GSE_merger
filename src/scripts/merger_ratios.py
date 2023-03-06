@@ -80,8 +80,8 @@ time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 time_dict = pickle.load(open(paths.data / '2.79e12_time_dict.dat','rb'))
 before = time_dict['00280']
 after = time_dict['00480']
-axl.plot([before,before],[-.105,1.55],color='darkgray')
-axl.plot([after,after],[-.105,1.55],color='darkgray')
+axl.plot([before,before],[1e7,4e11],color='darkgray')
+axl.plot([after,after],[1e7,4e11],color='darkgray')
 
 axl.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 axl.text(7,5e10,'g2.79e12',fontsize=30)
@@ -106,8 +106,8 @@ time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 time_dict = pickle.load(open(paths.data / '8.26e11_time_dict.dat','rb'))
 before = time_dict['00530']
 after = time_dict['00710']
-ax1l.plot([before,before],[-.105,1.55],color='darkgray')
-ax1l.plot([after,after],[-.105,1.55],color='darkgray')
+ax1l.plot([before,before],[1e7,4e11],color='darkgray')
+ax1l.plot([after,after],[1e7,4e11],color='darkgray')
 
 ax1l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 ax1l.text(7,5e10,'g8.26e11',fontsize=30)
@@ -132,8 +132,8 @@ time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 time_dict = pickle.load(open(paths.data / '7.55e11_time_dict.dat','rb'))
 before = time_dict['00360']
 after = time_dict['00520']
-ax2l.plot([before,before],[-.105,1.55],color='darkgray')
-ax2l.plot([after,after],[-.105,1.55],color='darkgray')
+ax2l.plot([before,before],[1e7,4e11],color='darkgray')
+ax2l.plot([after,after],[1e7,4e11],color='darkgray')
 
 ax2l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 ax2l.text(7,5e10,'g7.55e11',fontsize=30)
@@ -157,8 +157,8 @@ time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 time_dict = pickle.load(open(paths.data / '7.08e11_time_dict.dat','rb'))
 before = time_dict['00256']
 after = time_dict['00356']
-ax3l.plot([before,before],[-.105,1.55],color='darkgray')
-ax3l.plot([after,after],[-.105,1.55],color='darkgray')
+ax3l.plot([before,before],[1e7,4e11],color='darkgray')
+ax3l.plot([after,after],[1e7,4e11],color='darkgray')
 
 ax3l.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 ax3l.text(7,5e10,'g7.08e11',fontsize=30)
