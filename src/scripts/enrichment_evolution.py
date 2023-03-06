@@ -97,8 +97,8 @@ gas_profile_files.sort()
 
 before = time_dict['00280']
 after = time_dict['00480']
-ax1l.plot([before,before],[-.105,0.0],color='darkgray')
-ax1l.plot([after,after],[-.105,0.0],color='darkgray')
+ax1l.plot([before,before],[-.105,1.55],color='darkgray')
+ax1l.plot([after,after],[-.105,1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -122,7 +122,7 @@ axl.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np.
 axl.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 axl.set_title('g2.79e12',fontsize=30)
-axl.legend(ncol=2, fontsize=30)
+axl.legend(ncol=2, fontsize=27)
 
 # now g8.26e11
 central = []
@@ -139,8 +139,8 @@ gas_profile_files.sort()
 
 before = time_dict['00530']
 after = time_dict['00710']
-ax1l.plot([before,before],[-.105,0.0],color='darkgray')
-ax1l.plot([after,after],[-.105,0.0],color='darkgray')
+ax1l.plot([before,before],[-.105,1.55],color='darkgray')
+ax1l.plot([after,after],[-.105,1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -164,7 +164,7 @@ ax1l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np
 ax1l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 ax1l.set_title('g8.26e11',fontsize=30)
-ax1l.legend(ncol=2, fontsize=30)
+ax1l.legend(ncol=2, fontsize=27)
 
 # now we do g7.55e11
 central = []
@@ -181,8 +181,8 @@ gas_profile_files.sort()
 
 before = time_dict['00360']
 after = time_dict['00520']
-ax2l.plot([before,before],[-.105,0.0],color='darkgray')
-ax2l.plot([after,after],[-.105,0.0],color='darkgray')
+ax2l.plot([before,before],[-.105,1.55],color='darkgray')
+ax2l.plot([after,after],[-.105,1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -206,7 +206,7 @@ ax2l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np
 ax2l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 ax2l.set_title('g7.55e11',fontsize=30)
-ax2l.legend(ncol=2, fontsize=30)
+ax2l.legend(ncol=2, fontsize=27)
 
 # now we do g7.08e11
 central = []
@@ -223,8 +223,8 @@ gas_profile_files.sort()
 
 before = time_dict['00256']
 after = time_dict['00356']
-ax3l.plot([before,before],[-.105,0.0],color='darkgray')
-ax3l.plot([after,after],[-.105,0.0],color='darkgray')
+ax3l.plot([before,before],[-.105,1.55],color='darkgray')
+ax3l.plot([after,after],[-.105,1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -248,6 +248,6 @@ ax3l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np
 ax3l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 ax3l.set_title('g7.08e11',fontsize=30)
-ax3l.legend(ncol=2, fontsize=30)
+ax3l.legend(ncol=2, fontsize=27)
 
 plt.savefig(paths.figures / 'enrichment_evolution.pdf', bbox_inches='tight')
