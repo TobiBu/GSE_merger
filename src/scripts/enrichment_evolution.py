@@ -57,7 +57,7 @@ axl = plt.subplot(gs[0])
 ax1l = plt.subplot(gs[1])
 ax2l = plt.subplot(gs[2])
 ax3l = plt.subplot(gs[3])
-axl.set_ylabel("$\Delta\mathrm{[Fe/H]\ dex/kpc}$")
+axl.set_ylabel("$\\frac{\Delta\mathrm{[Fe/H]}}{\mathrm{[Fe/H]}(R<2\, \mathrm{kpc})}$")
 ax1l.set_yticklabels([])
 ax2l.set_yticklabels([])
 ax3l.set_yticklabels([])
@@ -122,11 +122,7 @@ axl.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np.
 axl.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$14<R<16\, \mathrm{kpc}$', color=color[1])
 
 axl.set_title('g2.79e12',fontsize=30)
-axl.legend()
-axl.ylim(-.115,1.55)
-axl.xlim(0,14)
-axl.ylabel("$\\frac{\Delta\mathrm{[Fe/H]}}{\mathrm{[Fe/H]}(R<2\, \mathrm{kpc})}$")
-axl.xlabel("$\mathrm{time\ [Gyr]}$")
+axl.legend(ncol=2)
 
 # now g8.26e11
 central = []
@@ -168,11 +164,7 @@ ax1l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np
 ax1l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$14<R<16\, \mathrm{kpc}$', color=color[1])
 
 ax1l.set_title('g8.26e11',fontsize=30)
-ax1l.legend()
-ax1l.ylim(-.115,1.55)
-ax1l.xlim(0,14)
-#ax1l.ylabel("$\\frac{\Delta\mathrm{[Fe/H]}}{\mathrm{[Fe/H]}(R<2\, \mathrm{kpc})}$")
-ax1l.xlabel("$\mathrm{time\ [Gyr]}$")
+ax1l.legend(ncol=2)
 
 # now we do g7.55e11
 central = []
@@ -214,11 +206,7 @@ ax2l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np
 ax2l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$14<R<16\, \mathrm{kpc}$', color=color[1])
 
 ax2l.set_title('g7.55e11',fontsize=30)
-ax2l.legend()
-ax2l.ylim(-.115,1.55)
-ax2l.xlim(0,14)
-#ax2l.ylabel("$\\frac{\Delta\mathrm{[Fe/H]}}{\mathrm{[Fe/H]}(R<2\, \mathrm{kpc})}$")
-ax2l.xlabel("$\mathrm{time\ [Gyr]}$")
+ax2l.legend(ncol=2)
 
 # now we do g7.08e11
 central = []
@@ -260,10 +248,6 @@ ax3l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np
 ax3l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$14<R<16\, \mathrm{kpc}$', color=color[1])
 
 ax3l.set_title('g7.08e11',fontsize=30)
-ax3l.legend()
-ax3l.ylim(-.115,1.55)
-ax3l.xlim(0,14)
-#ax3l.ylabel("$\\frac{\Delta\mathrm{[Fe/H]}}{\mathrm{[Fe/H]}(R<2\, \mathrm{kpc})}$")
-ax3l.xlabel("$\mathrm{time\ [Gyr]}$")
+ax3l.legend(ncol=2)
 
 plt.savefig(paths.figures / 'enrichment_evolution.pdf', bbox_inches='tight')
