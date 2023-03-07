@@ -66,14 +66,14 @@ ax1l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 ax2l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 ax3l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 
-axl.set_ylim(-1.15,.45)
+axl.set_ylim(-1.25,.45)
 axl.set_xlim(0,13.9)
 ax1l.set_xlim(0,13.9)
-ax1l.set_ylim(-1.15,.45)
+ax1l.set_ylim(-1.25,.45)
 ax2l.set_xlim(0,13.9)
-ax2l.set_ylim(-1.15,.45)
+ax2l.set_ylim(-1.25,.45)
 ax3l.set_xlim(0,13.9)
-ax3l.set_ylim(-1.15,.45)
+ax3l.set_ylim(-1.25,.45)
 
 N = 5  # window size for running average of gradient
 
@@ -97,8 +97,8 @@ gas_profile_files.sort()
 
 before = time_dict['00320']
 after = time_dict['00520']
-axl.plot([before,before],[.105,-1.55],color='darkgray')
-axl.plot([after,after],[.105,-1.55],color='darkgray')
+axl.plot([before,before],[.95,-1.55],color='darkgray')
+axl.plot([after,after],[.95,-1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -139,8 +139,8 @@ gas_profile_files.sort()
 
 before = time_dict['00530']
 after = time_dict['00710']
-ax1l.plot([before,before],[.105,-1.55],color='darkgray')
-ax1l.plot([after,after],[.105,-1.55],color='darkgray')
+ax1l.plot([before,before],[.95,-1.55],color='darkgray')
+ax1l.plot([after,after],[.95,-1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -181,8 +181,8 @@ gas_profile_files.sort()
 
 before = time_dict['00360']
 after = time_dict['00520']
-ax2l.plot([before,before],[.105,-1.55],color='darkgray')
-ax2l.plot([after,after],[.105,-1.55],color='darkgray')
+ax2l.plot([before,before],[.95,-1.55],color='darkgray')
+ax2l.plot([after,after],[.95,-1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -223,8 +223,8 @@ gas_profile_files.sort()
 
 before = time_dict['00192']
 after = time_dict['00356']
-ax3l.plot([before,before],[.105,-1.55],color='darkgray')
-ax3l.plot([after,after],[.105,-1.55],color='darkgray')
+ax3l.plot([before,before],[.95,-1.55],color='darkgray')
+ax3l.plot([after,after],[.95,-1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
