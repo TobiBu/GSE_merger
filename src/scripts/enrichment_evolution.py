@@ -242,10 +242,10 @@ for i, f in enumerate(gas_profile_files[::-1]):
     outer.append(np.mean(data['feh'][out])-1)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
-ax3l.plot(times[2:-2], np.convolve((np.asarray(middle2)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid') , label='$3<R<5\, \mathrm{kpc}$', color=color[6])
-ax3l.plot(times[2:-2], np.convolve((np.asarray(middle)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$7<R<9\, \mathrm{kpc}$', color=color[4])
-ax3l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
-ax3l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
+ax3l.plot(times[2:-2], -np.convolve((np.asarray(middle2)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid') , label='$3<R<5\, \mathrm{kpc}$', color=color[6])
+ax3l.plot(times[2:-2], -np.convolve((np.asarray(middle)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$7<R<9\, \mathrm{kpc}$', color=color[4])
+ax3l.plot(times[2:-2], -np.convolve((np.asarray(middle3)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
+ax3l.plot(times[2:-2], -np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 ax3l.set_title('g7.08e11',fontsize=30)
 ax3l.legend(ncol=2, fontsize=27)
