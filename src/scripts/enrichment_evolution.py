@@ -66,14 +66,14 @@ ax1l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 ax2l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 ax3l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 
-axl.set_ylim(-.105,1.55)
+axl.set_ylim(.105,-1.55)
 axl.set_xlim(0,13.9)
 ax1l.set_xlim(0,13.9)
-ax1l.set_ylim(-.105,1.55)
+ax1l.set_ylim(.105,-1.55)
 ax2l.set_xlim(0,13.9)
-ax2l.set_ylim(-.105,1.55)
+ax2l.set_ylim(.105,-1.55)
 ax3l.set_xlim(0,13.9)
-ax3l.set_ylim(-.105,1.55)
+ax3l.set_ylim(.105,-1.55)
 
 N = 5  # window size for running average of gradient
 
@@ -97,8 +97,8 @@ gas_profile_files.sort()
 
 before = time_dict['00320']
 after = time_dict['00520']
-axl.plot([before,before],[-.105,1.55],color='darkgray')
-axl.plot([after,after],[-.105,1.55],color='darkgray')
+axl.plot([before,before],[.105,-1.55],color='darkgray')
+axl.plot([after,after],[.105,-1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -116,10 +116,10 @@ for i, f in enumerate(gas_profile_files[::-1]):
     outer.append(np.mean(data['feh'][out])-1)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
-axl.plot(times[2:-2], np.convolve((np.asarray(middle2)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid') , label='$3<R<5\, \mathrm{kpc}$', color=color[6])
-axl.plot(times[2:-2], np.convolve((np.asarray(middle)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$7<R<9\, \mathrm{kpc}$', color=color[4])
-axl.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
-axl.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
+axl.plot(times[2:-2], -np.convolve((np.asarray(middle2)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid') , label='$3<R<5\, \mathrm{kpc}$', color=color[6])
+axl.plot(times[2:-2], -np.convolve((np.asarray(middle)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$7<R<9\, \mathrm{kpc}$', color=color[4])
+axl.plot(times[2:-2], -np.convolve((np.asarray(middle3)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
+axl.plot(times[2:-2], -np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 axl.set_title('g2.79e12',fontsize=30)
 axl.legend(ncol=2, fontsize=27)
@@ -139,8 +139,8 @@ gas_profile_files.sort()
 
 before = time_dict['00530']
 after = time_dict['00710']
-ax1l.plot([before,before],[-.105,1.55],color='darkgray')
-ax1l.plot([after,after],[-.105,1.55],color='darkgray')
+ax1l.plot([before,before],[.105,-1.55],color='darkgray')
+ax1l.plot([after,after],[.105,-1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -158,10 +158,10 @@ for i, f in enumerate(gas_profile_files[::-1]):
     outer.append(np.mean(data['feh'][out])-1)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
-ax1l.plot(times[2:-2], np.convolve((np.asarray(middle2)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid') , label='$3<R<5\, \mathrm{kpc}$', color=color[6])
-ax1l.plot(times[2:-2], np.convolve((np.asarray(middle)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$7<R<9\, \mathrm{kpc}$', color=color[4])
-ax1l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
-ax1l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
+ax1l.plot(times[2:-2], -np.convolve((np.asarray(middle2)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid') , label='$3<R<5\, \mathrm{kpc}$', color=color[6])
+ax1l.plot(times[2:-2], -np.convolve((np.asarray(middle)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$7<R<9\, \mathrm{kpc}$', color=color[4])
+ax1l.plot(times[2:-2], -np.convolve((np.asarray(middle3)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
+ax1l.plot(times[2:-2], -np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 ax1l.set_title('g8.26e11',fontsize=30)
 ax1l.legend(ncol=2, fontsize=27)
@@ -181,8 +181,8 @@ gas_profile_files.sort()
 
 before = time_dict['00360']
 after = time_dict['00520']
-ax2l.plot([before,before],[-.105,1.55],color='darkgray')
-ax2l.plot([after,after],[-.105,1.55],color='darkgray')
+ax2l.plot([before,before],[.105,-1.55],color='darkgray')
+ax2l.plot([after,after],[.105,-1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
@@ -200,10 +200,10 @@ for i, f in enumerate(gas_profile_files[::-1]):
     outer.append(np.mean(data['feh'][out])-1)
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
-ax2l.plot(times[2:-2], np.convolve((np.asarray(middle2)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid') , label='$3<R<5\, \mathrm{kpc}$', color=color[6])
-ax2l.plot(times[2:-2], np.convolve((np.asarray(middle)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$7<R<9\, \mathrm{kpc}$', color=color[4])
-ax2l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
-ax2l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
+ax2l.plot(times[2:-2], -np.convolve((np.asarray(middle2)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid') , label='$3<R<5\, \mathrm{kpc}$', color=color[6])
+ax2l.plot(times[2:-2], -np.convolve((np.asarray(middle)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$7<R<9\, \mathrm{kpc}$', color=color[4])
+ax2l.plot(times[2:-2], -np.convolve((np.asarray(middle3)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
+ax2l.plot(times[2:-2], -np.convolve((np.asarray(outer)-np.asarray(central))/(np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 ax2l.set_title('g7.55e11',fontsize=30)
 ax2l.legend(ncol=2, fontsize=27)
@@ -223,8 +223,8 @@ gas_profile_files.sort()
 
 before = time_dict['00192']
 after = time_dict['00356']
-ax3l.plot([before,before],[-.105,1.55],color='darkgray')
-ax3l.plot([after,after],[-.105,1.55],color='darkgray')
+ax3l.plot([before,before],[.105,-1.55],color='darkgray')
+ax3l.plot([after,after],[.105,-1.55],color='darkgray')
 
 for i, f in enumerate(gas_profile_files[::-1]):
     data = pickle.load(open(paths.data / f,'rb'))
