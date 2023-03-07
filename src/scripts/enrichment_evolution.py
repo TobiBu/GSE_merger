@@ -57,7 +57,7 @@ axl = plt.subplot(gs[0])
 ax1l = plt.subplot(gs[1])
 ax2l = plt.subplot(gs[2])
 ax3l = plt.subplot(gs[3])
-axl.set_ylabel("$\\frac{\Delta\mathrm{[Fe/H]}}{\mathrm{[Fe/H]}(R<2\, \mathrm{kpc})}$")
+axl.set_ylabel("$\Delta\mathrm{[Fe/H]}$") #\\frac{\Delta\mathrm{[Fe/H]}}{\mathrm{[Fe/H]}(R<2\, \mathrm{kpc})}
 ax1l.set_yticklabels([])
 ax2l.set_yticklabels([])
 ax3l.set_yticklabels([])
@@ -122,7 +122,7 @@ axl.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central)), np.
 axl.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 axl.set_title('g2.79e12',fontsize=30)
-axl.legend(ncol=2, fontsize=27)
+axl.legend(ncol=2, fontsize=27, loc=1)
 
 # now g8.26e11
 central = []
@@ -164,7 +164,7 @@ ax1l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central)), np
 ax1l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 ax1l.set_title('g8.26e11',fontsize=30)
-ax1l.legend(ncol=2, fontsize=27)
+ax1l.legend(ncol=2, fontsize=27, loc=1)
 
 # now we do g7.55e11
 central = []
@@ -206,7 +206,7 @@ ax2l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central)), np
 ax2l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 ax2l.set_title('g7.55e11',fontsize=30)
-ax2l.legend(ncol=2, fontsize=27)
+ax2l.legend(ncol=2, fontsize=27, loc=1)
 
 # now we do g7.08e11
 central = []
@@ -248,6 +248,6 @@ ax3l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central)), np
 ax3l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 ax3l.set_title('g7.08e11',fontsize=30)
-ax3l.legend(ncol=2, fontsize=27)
+ax3l.legend(ncol=2, fontsize=27, loc=1)
 
 plt.savefig(paths.figures / 'enrichment_evolution.pdf', bbox_inches='tight')
