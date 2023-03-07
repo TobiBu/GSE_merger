@@ -49,10 +49,8 @@ plt.rcParams.update({
 
 plt.plot([0,25],[0,0], color='darkgray')
 
-data = pickle.load(open(paths.data / '2.79e12.00320_cold_gas_profile.dat','rb'))
-data1 = pickle.load(open(paths.data / '2.79e12.00580_cold_gas_profile.dat','rb'))
-#data = pickle.load(open(paths.data / '2.79e12.00280_cold_gas_profile.dat','rb'))
-#data1 = pickle.load(open(paths.data / '2.79e12.00480_cold_gas_profile.dat','rb'))
+data = pickle.load(open(paths.data / '2.79e12.00280_cold_gas_profile.dat','rb'))
+data1 = pickle.load(open(paths.data / '2.79e12.00480_cold_gas_profile.dat','rb'))
 plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g2.79e12}$')
 
 data = pickle.load(open(paths.data / '8.26e11.00530_cold_gas_profile.dat','rb'))
@@ -63,8 +61,7 @@ data = pickle.load(open(paths.data / '7.55e11.00360_cold_gas_profile.dat','rb'))
 data1 = pickle.load(open(paths.data / '7.55e11.00520_cold_gas_profile.dat','rb'))
 plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g7.55e11}$')
 
-data = pickle.load(open(paths.data / '7.08e11.00192_cold_gas_profile.dat','rb'))
-#data = pickle.load(open(paths.data / '7.08e11.00256_cold_gas_profile.dat','rb'))
+data = pickle.load(open(paths.data / '7.08e11.00256_cold_gas_profile.dat','rb'))
 data1 = pickle.load(open(paths.data / '7.08e11.00356_cold_gas_profile.dat','rb'))
 plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g7.08e11}$')
 
