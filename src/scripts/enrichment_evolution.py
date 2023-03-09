@@ -122,7 +122,7 @@ axl.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central)), np.
 axl.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 axl.set_title('g2.79e12',fontsize=30)
-axl.legend(ncol=2, fontsize=27, loc=1)
+axl.legend(ncol=2, loc=1)
 
 # now g8.26e11
 central = []
