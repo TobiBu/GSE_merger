@@ -50,7 +50,7 @@ plt.rcParams.update({
     'axes.formatter.use_mathtext': True # needed when using cm=cmr10 for normal text
 })
 
-fig = plt.figure(figsize=(45,7.5))
+fig = plt.figure(figsize=(30,5))
 gs = gridspec.GridSpec(1, 4, width_ratios=[1,1,1,1], height_ratios=[1])
 gs.update(hspace=0.0, wspace=0.0)
 axl = plt.subplot(gs[0])
