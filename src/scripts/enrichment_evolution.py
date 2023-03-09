@@ -66,14 +66,14 @@ ax1l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 ax2l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 ax3l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 
-axl.set_ylim(-1.25,.45)
+axl.set_ylim(-1.25,.15)
 axl.set_xlim(0,13.9)
 ax1l.set_xlim(0,13.9)
-ax1l.set_ylim(-1.25,.45)
+ax1l.set_ylim(-1.25,.15)
 ax2l.set_xlim(0,13.9)
-ax2l.set_ylim(-1.25,.45)
+ax2l.set_ylim(-1.25,.15)
 ax3l.set_xlim(0,13.9)
-ax3l.set_ylim(-1.25,.45)
+ax3l.set_ylim(-1.25,.15)
 
 N = 5  # window size for running average of gradient
 
@@ -248,6 +248,6 @@ ax3l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.o
 
 ax3l.text(6,0.1,'g7.08e11',fontsize=30)
 #ax3l.legend(ncol=2, fontsize=27, loc=1)
-ax3l.legend(ncol=4, loc=1, bbox_to_anchor=(.3,1.1))#, fontsize=24)
+ax3l.legend(ncol=4, loc=1, bbox_to_anchor=(.3,1.35))#, fontsize=24)
 
 plt.savefig(paths.figures / 'enrichment_evolution.pdf', bbox_inches='tight')
