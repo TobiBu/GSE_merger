@@ -66,14 +66,14 @@ ax1l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 ax2l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 ax3l.set_xlabel("$\mathrm{time\ [Gyr]}$")
 
-axl.set_ylim(-1.25,.15)
+axl.set_ylim(-1.25,.175)
 axl.set_xlim(0,13.9)
 ax1l.set_xlim(0,13.9)
-ax1l.set_ylim(-1.25,.15)
+ax1l.set_ylim(-1.25,.175)
 ax2l.set_xlim(0,13.9)
-ax2l.set_ylim(-1.25,.15)
+ax2l.set_ylim(-1.25,.175)
 ax3l.set_xlim(0,13.9)
-ax3l.set_ylim(-1.25,.15)
+ax3l.set_ylim(-1.25,.175)
 
 N = 5  # window size for running average of gradient
 
@@ -121,7 +121,7 @@ axl.plot(times[2:-2], np.convolve((np.asarray(middle)-np.asarray(central)), np.o
 axl.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
 axl.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
-axl.text(6,0.075,'g2.79e12',fontsize=30)
+axl.text(6,0.07,'g2.79e12',fontsize=30)
 #axl.legend(ncol=2, fontsize=24, loc=1)
 
 # now g8.26e11
@@ -163,7 +163,7 @@ ax1l.plot(times[2:-2], np.convolve((np.asarray(middle)-np.asarray(central)), np.
 ax1l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
 ax1l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
-ax1l.text(6,0.075,'g8.26e11',fontsize=30)
+ax1l.text(6,0.07,'g8.26e11',fontsize=30)
 
 # now we do g7.55e11
 central = []
@@ -204,7 +204,7 @@ ax2l.plot(times[2:-2], np.convolve((np.asarray(middle)-np.asarray(central)), np.
 ax2l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
 ax2l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
-ax2l.text(6,0.075,'g7.55e11',fontsize=30)
+ax2l.text(6,0.07,'g7.55e11',fontsize=30)
 #ax2l.legend(ncol=2, fontsize=27, loc=1)
 
 # now we do g7.08e11
@@ -246,8 +246,8 @@ ax3l.plot(times[2:-2], np.convolve((np.asarray(middle)-np.asarray(central)), np.
 ax3l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$9<R<13\, \mathrm{kpc}$', color='#ff7f0e')#color[2])
 ax3l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
-ax3l.text(6,0.075,'g7.08e11',fontsize=30)
+ax3l.text(6,0.07,'g7.08e11',fontsize=30)
 #ax3l.legend(ncol=2, fontsize=27, loc=1)
-ax3l.legend(ncol=4, loc=1, bbox_to_anchor=(.35,1.2))#, fontsize=24)
+ax3l.legend(ncol=4, loc=1, bbox_to_anchor=(.35,1.225))#, fontsize=24)
 
 plt.savefig(paths.figures / 'enrichment_evolution.pdf', bbox_inches='tight')

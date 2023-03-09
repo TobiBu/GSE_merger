@@ -49,7 +49,7 @@ plt.rcParams.update({
     'axes.formatter.use_mathtext': True # needed when using cm=cmr10 for normal text
 })
 
-fig = plt.figure(figsize=(30,10))
+fig = plt.figure(figsize=(36,12))
 gs = gridspec.GridSpec(2, 4, width_ratios=[1,1,1,1], height_ratios=[1,1])
 gs.update(hspace=0.0, wspace=0.0)
 ax = plt.subplot(gs[0])
@@ -62,8 +62,8 @@ ax5 = plt.subplot(gs[5])
 ax6 = plt.subplot(gs[6])
 ax7 = plt.subplot(gs[7])
 
-ax.set_ylabel("$\mathrm{[O/Fe]}$")
-ax4.set_ylabel("$\mathrm{[O/Fe]}$")
+ax.set_ylabel("$\mathrm{[\\alpha/Fe]}$")
+ax4.set_ylabel("$\mathrm{[\\alpha/Fe]}$")
 
 ax1.set_yticklabels([])
 ax2.set_yticklabels([])

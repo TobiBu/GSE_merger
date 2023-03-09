@@ -59,7 +59,7 @@ data2 = pickle.load(open( paths.data / '2.79e12..00376_halo1_total_age_fe.dat','
 data3 = pickle.load(open( paths.data / '2.79e12..00376_halo8_total_age_fe.dat','rb'))
 data4 = pickle.load(open( paths.data / '2.79e12..01350_halo1_total_age_fe.dat','rb'))
 
-fig = plt.figure(figsize=(30,5))
+fig = plt.figure(figsize=(36,6))
 gs = gridspec.GridSpec(1, 4, width_ratios=[1,1,1,1], height_ratios=[1])
 gs.update(hspace=0.0, wspace=0.0)
 ax = plt.subplot(gs[0])
