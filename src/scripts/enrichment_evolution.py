@@ -164,7 +164,7 @@ ax1l.plot(times[2:-2], np.convolve((np.asarray(middle3)-np.asarray(central)), np
 ax1l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.ones(N)/N, mode='valid'), label='$13<R<17\, \mathrm{kpc}$', color=color[1])
 
 ax1l.text(7,0.1,'g8.26e11',fontsize=30)
-ax1l.legend(ncol=4, loc=1, bbox_to_anchor=(.05,1.1))#, fontsize=24)
+ax1l.legend(ncol=4, loc=1, bbox_to_anchor=(1.05,1.1))#, fontsize=24)
 
 # now we do g7.55e11
 central = []
