@@ -88,7 +88,8 @@ ax3.hist(data_main['ofe_gas'],bins=50, histtype='stepfilled', color='darkgray', 
 ax3.hist(data['ofe'],bins=50, histtype='step', range=(.10,0.6), density=True, label='$\mathrm{merger\, galaxy\, stars}$')
 ax3.hist(data['ofe_gas'],bins=50, histtype='stepfilled', alpha=.5, range=(.10,0.6), density=True, label='$\mathrm{merger\, galaxy\, gas}$')
 
-ax3.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['00292'])
+ax3.text(-1.75, 3.2, '$t=%.2f\,\mathrm{Gyr}$'%time_dict['00292'])
+ax3.legend(ncol=4, loc=1, bbox_to_anchor=(.6,1.225))#, fontsize=24)
 
 # second merger
 ax2.hist(data_main2['ofe'],bins=50, histtype='step', color='k', range=(.10,0.6), density=True, label='$\mathrm{main\, galaxy\, stars}$')
@@ -96,7 +97,7 @@ ax2.hist(data_main2['ofe_gas'],bins=50, histtype='stepfilled', color='darkgray',
 ax2.hist(data2['ofe'],bins=50, histtype='step', range=(.10,0.6), density=True, label='$\mathrm{merger\, galaxy\, 1\, stars}$')
 ax2.hist(data2['ofe_gas'],bins=50, histtype='stepfilled', alpha=0.5,range=(.10,0.6), density=True, label='$\mathrm{merger\, galaxy\, 1\, gas}$')
 
-ax2.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['00376']) # done merging by 3 Gyr
+ax2.text(-1.75, 3.2, '$t=%.2f\,\mathrm{Gyr}$'%time_dict['00376']) # done merging by 3 Gyr
 
 # third merger
 ax1.hist(data_main2['ofe'],bins=50, histtype='step', color='k', range=(.10,0.6), density=True, label='$\mathrm{main\, galaxy\, stars}$')
@@ -104,7 +105,7 @@ ax1.hist(data_main2['ofe_gas'],bins=50, histtype='stepfilled', color='darkgray',
 ax1.hist(data3['ofe'],bins=50, histtype='step', range=(.10,0.6), density=True, label='$\mathrm{merger\, galaxy\, 2\, stars}$')
 ax1.hist(data3['ofe_gas'],bins=50, histtype='stepfilled', alpha=0.5, range=(.10,0.6), density=True, label='$\mathrm{merger\, galaxy\, 2\, gas}$')
 
-ax1.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['00376']) # done merging by 3 Gyr
+ax1.text(-1.75, 3.2, '$t=%.2f\,\mathrm{Gyr}$'%time_dict['00376']) # done merging by 3 Gyr
 
 # fourth merger
 ax.hist(data_main3['ofe'],bins=50, histtype='step', color='k', range=(.10,0.6), density=True, label='$\mathrm{main\, galaxy\, stars}$')
@@ -112,6 +113,6 @@ ax.hist(data_main3['ofe_gas'],bins=50, histtype='stepfilled', color='darkgray', 
 ax.hist(data4['ofe'],bins=50, histtype='step', range=(.10,0.6), density=True, label='$\mathrm{merger\, galaxy\, 2\, stars}$')
 ax.hist(data4['ofe_gas'],bins=50, histtype='stepfilled', alpha=0.5, range=(.10,0.6), density=True, label='$\mathrm{merger\, galaxy\, 2\, gas}$')
 
-ax.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['00376']) # done merging by 3 Gyr
+ax.text(-1.75, 3.2, '$t=%.2f\,\mathrm{Gyr}$'%time_dict['01350']) # done merging by 3 Gyr
 
 plt.savefig(paths.figures / '2.79e12_mdf_oxygen_gas.pdf', bbox_inches='tight')

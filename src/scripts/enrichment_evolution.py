@@ -248,6 +248,6 @@ ax3l.plot(times[2:-2], np.convolve((np.asarray(outer)-np.asarray(central)), np.o
 
 ax3l.text(6,0.07,'g7.08e11')#,fontsize=30)
 #ax3l.legend(ncol=2, fontsize=27, loc=1)
-ax3l.legend(ncol=4, loc=1, bbox_to_anchor=(.35,1.225))#, fontsize=24)
+ax3l.legend(ncol=4, loc=1, bbox_to_anchor=(.4,1.225))#, fontsize=24)
 
 plt.savefig(paths.figures / 'enrichment_evolution.pdf', bbox_inches='tight')

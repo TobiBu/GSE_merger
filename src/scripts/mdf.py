@@ -88,7 +88,7 @@ ax3.hist(data['feh'],bins=50, histtype='step', range=(-3.5,0.5), density=True, l
 ax3.hist(data['feh_gas'],bins=50, histtype='stepfilled', alpha=.5, range=(-3.5,0.5), density=True, label='$\mathrm{merger\, galaxy\, gas}$')
 
 ax3.text(-1.75, 3.2, '$t=%.2f\,\mathrm{Gyr}$'%time_dict['00292'])
-ax3.legend(ncol=4, loc=1, bbox_to_anchor=(.35,1.225))#, fontsize=24)
+ax3.legend(ncol=4, loc=1, bbox_to_anchor=(.6,1.225))#, fontsize=24)
 
 # second merger
 ax2.hist(data_main2['feh'],bins=50, histtype='step', color='k', range=(-3.5,0.5), density=True, label='$\mathrm{main\, galaxy\, stars}$')
