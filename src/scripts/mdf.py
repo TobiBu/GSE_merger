@@ -52,20 +52,34 @@ time_dict = pickle.load(open( paths.data / '2.79e12_time_dict.dat','rb'))
 
 data_main = pickle.load(open( paths.data / '2.79e12..00292_halo0_total_age_fe.dat','rb'))
 data_main2 = pickle.load(open( paths.data / '2.79e12..00376_halo0_total_age_fe.dat','rb'))
+data_main3 = pickle.load(open( paths.data / '2.79e12..01350_halo0_total_age_fe.dat','rb'))
 data = pickle.load(open( paths.data / '2.79e12..00292_halo2_total_age_fe.dat','rb'))
 data2 = pickle.load(open( paths.data / '2.79e12..00376_halo1_total_age_fe.dat','rb'))
 data3 = pickle.load(open( paths.data / '2.79e12..00376_halo8_total_age_fe.dat','rb'))
+data4 = pickle.load(open( paths.data / '2.79e12..01350_halo1_total_age_fe.dat','rb'))
 
-
-fig = plt.figure(figsize=(45, 10))
-gs = gridspec.GridSpec(1, 3, width_ratios=[1,1,1], height_ratios=[1])
+fig = plt.figure(figsize=(30,5))
+gs = gridspec.GridSpec(1, 4, width_ratios=[1,1,1,1], height_ratios=[1])
 gs.update(hspace=0.0, wspace=0.0)
 ax = plt.subplot(gs[0])
 ax1 = plt.subplot(gs[1])
 ax2 = plt.subplot(gs[2])
+ax3 = plt.subplot(gs[3])
+
+ax.set_ylabel('$\mathrm{d} f/\mathrm{d[Fe/H]}$')
+ax.set_xlabel('$\mathrm{[Fe/H]}$')
+ax1.set_xlabel('$\mathrm{[Fe/H]}$')
+ax2.set_xlabel('$\mathrm{[Fe/H]}$')
+ax3.set_xlabel('$\mathrm{[Fe/H]}$')
+
+ax.set_ylim(0,3.8)
+ax1.set_ylim(0,3.8)
+ax2.set_ylim(0,3.8)
+ax3.set_ylim(0,3.8)
 
 ax1.set_yticklabels([])
 ax2.set_yticklabels([])
+ax3.set_yticklabels([])
 
 # first merger
 ax.hist(data_main['feh'],bins=50, histtype='step', color='k', range=(-3.5,-0.), density=True, label='$\mathrm{main\, galaxy\, stars}$')
@@ -74,9 +88,7 @@ ax.hist(data['feh'],bins=50, histtype='step', range=(-3.5,-0.), density=True, la
 ax.hist(data['feh_gas'],bins=50, histtype='stepfilled', alpha=.5, range=(-3.5,-0.), density=True, label='$\mathrm{merger\, galaxy\, gas}$')
 
 ax.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['00292'])
-ax.set_xlabel('$\mathrm{[Fe/H]}$')
-ax.set_ylabel('$\mathrm{d} f/\mathrm{d[Fe/H]}$')
-ax.set_ylim(0,3.8)
+
 
 
 # second merger
@@ -86,9 +98,6 @@ ax1.hist(data2['feh'],bins=50, histtype='step', range=(-3.5,-0.), density=True, 
 ax1.hist(data2['feh_gas'],bins=50, histtype='stepfilled', alpha=0.5,range=(-3.5,-0.), density=True, label='$\mathrm{merger\, galaxy\, 1\, gas}$')
 
 ax1.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['00376']) # done merging by 3 Gyr
-ax1.set_xlabel('$\mathrm{[Fe/H]}$')
-ax1.set_ylim(0,3.8)
-
 
 ax2.hist(data_main2['feh'],bins=50, histtype='step', color='k', range=(-3.5,-0.), density=True, label='$\mathrm{main\, galaxy\, stars}$')
 ax2.hist(data_main2['feh_gas'],bins=50, histtype='stepfilled', color='darkgray', range=(-3.5,-0.), density=True, label='$\mathrm{main\, galaxy\, gas}$')
@@ -96,7 +105,13 @@ ax2.hist(data3['feh'],bins=50, histtype='step', range=(-3.5,-0.), density=True, 
 ax2.hist(data3['feh_gas'],bins=50, histtype='stepfilled', alpha=0.5, range=(-3.5,-0.), density=True, label='$\mathrm{merger\, galaxy\, 2\, gas}$')
 
 ax2.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['00376']) # done merging by 3 Gyr
-ax2.set_xlabel('$\mathrm{[Fe/H]}$')
-ax2.set_ylim(0,3.8)
+
+ax3.hist(data_main3['feh'],bins=50, histtype='step', color='k', range=(-3.5,-0.), density=True, label='$\mathrm{main\, galaxy\, stars}$')
+ax3.hist(data_main3['feh_gas'],bins=50, histtype='stepfilled', color='darkgray', range=(-3.5,-0.), density=True, label='$\mathrm{main\, galaxy\, gas}$')
+ax3.hist(data4['feh'],bins=50, histtype='step', range=(-3.5,-0.), density=True, label='$\mathrm{merger\, galaxy\, 2\, stars}$')
+ax3.hist(data4['feh_gas'],bins=50, histtype='stepfilled', alpha=0.5, range=(-3.5,-0.), density=True, label='$\mathrm{merger\, galaxy\, 2\, gas}$')
+
+ax3.legend(loc=2, title='$t=%.2f\,\mathrm{Gyr}$'%time_dict['01350']) # done merging by 3 Gyr
+
 
 plt.savefig(paths.figures / '2.79e12_mdf_gas.pdf', bbox_inches='tight')
