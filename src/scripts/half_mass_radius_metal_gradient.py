@@ -105,7 +105,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
 
 axl.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'), label='$\mathrm{metallicity\ gradient\ cold\ gas}$' )
 
-axl.text(7,-0.01,'g2.79e12',fontsize=30)
+axl.text(7,-0.015,'g2.79e12')#,fontsize=30)
 axl.spines['left'].set_color('#1f77b4')
 axl.yaxis.label.set_color('#1f77b4')
 axl.tick_params(axis='y', colors='#1f77b4')
@@ -146,7 +146,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
 ax1l.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'))
-ax1l.text(7,-0.01,'g8.26e11',fontsize=30)
+ax1l.text(7,-0.015,'g8.26e11')#,fontsize=30)
 ax1l.tick_params(axis='y', colors='#1f77b4')
 
 ax1 = ax1l.twinx()
@@ -185,7 +185,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
 ax2l.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'))
-ax2l.text(7,-0.01,'g7.55e11',fontsize=30)
+ax2l.text(7,-0.015,'g7.55e11')#,fontsize=30)
 ax2l.tick_params(axis='y', colors='#1f77b4')
 
 ax2 = ax2l.twinx()
@@ -224,7 +224,7 @@ for i, f in enumerate(gas_profile_files[::-1]):
     times.append(time_dict[f.split('_')[0].split('.')[-1]])
 
 ax3l.plot(times[5:-4], np.convolve(slopes, np.ones(N)/N, mode='valid'))
-ax3l.text(7,-0.01,'g7.08e11',fontsize=30)
+ax3l.text(7,-0.015,'g7.08e11')#,fontsize=30)
 ax3l.tick_params(axis='y', colors='#1f77b4')
 #ax3l.spines['right'].set_visible(False)
 
