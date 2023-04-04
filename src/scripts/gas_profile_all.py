@@ -55,7 +55,7 @@ plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='
 
 data = pickle.load(open(paths.data / '8.26e11.00530_cold_gas_profile.dat','rb'))
 data1 = pickle.load(open(paths.data / '8.26e11.00710_cold_gas_profile.dat','rb'))
-plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g7.55e11}$')
+plt.plot(data['bins'],(data1['density']-data['density'])/data['density'],label='$\mathrm{g8.26e11}$')
 
 data = pickle.load(open(paths.data / '7.55e11.00360_cold_gas_profile.dat','rb'))
 data1 = pickle.load(open(paths.data / '7.55e11.00520_cold_gas_profile.dat','rb'))

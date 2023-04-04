@@ -78,10 +78,12 @@ data = pickle.load(open(paths.data / '2.79e12_merger_tree_data.dat','rb'))
 time = np.linspace(0,13.8, len(data['gas_mass']))[::-1]
 
 time_dict = pickle.load(open(paths.data / '2.79e12_time_dict.dat','rb'))
-before = time_dict['00320']
+before = time_dict['00300']
 after = time_dict['00580']
-axl.plot([before,before],[1e7,4e11],color='darkgray')
-axl.plot([after,after],[1e7,4e11],color='darkgray')
+
+axl.fill_between([before,after], 1e7, 4e11, color='darkgray', alpha=0.75, zorder=-1)
+#axl.plot([before,before],[1e7,4e11],color='darkgray')
+#axl.plot([after,after],[1e7,4e11],color='darkgray')
 
 axl.plot(time, data['gas_mass'], label='$\mathrm{gas/, mass}$' )
 axl.text(7,5e10,'g2.79e12')#,fontsize=30)
