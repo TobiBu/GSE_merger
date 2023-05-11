@@ -361,21 +361,6 @@ Finally, we adopted a metal diffusion algorithm between particles as described i
 
 The haloes in the zoom-in simulations were identified using the MPI+OpenMP hybrid halo finder \texttt{AHF2} \citep{Knollmann2009} and we use the accompanying merger tree tool to trace the particle IDs of all dark matter particles through time and identify all progenitor halos of a given galaxy/dark matter halo at redshift $z=0$. Subsequent analysis of the merger tree files is then performed with the {\texttt {ytree}} package \citep{ytree}. 
 
-\begin{figure*}
-    \begin{centering}
-     \includegraphics[width=\linewidth]{figures/frame0019.pdf}
-     \includegraphics[width=\linewidth]{figures/frame0023.pdf}
-     \includegraphics[width=\linewidth]{figures/frame0027.pdf}
-     \includegraphics[width=\linewidth]{figures/frame0038.pdf}
-     \includegraphics[width=\linewidth]{figures/frame0044.pdf}
-        \vspace*{-1.75em}
-        \caption{
-     bla bla bla       
-        }
-        \label{fig:half_mass}
-    \end{centering}
-\end{figure*}
-
 \begin{figure}
     \script{gas_profile_all.py}
     \begin{centering}
@@ -412,11 +397,44 @@ Especially for g2.79e12 (left most panel) and g7.08e11 (right most panel) we see
 
 \subsection{The impact of gas rich mergers on the metallicity gradient} \label{sec:merger}
 
-The sudden increase of gas mass due to these gas rich mergers leads to a sudden increase in the half mass radius ($\gsim20$ kpc) of the cold gas disk of the main galaxy as the orange lines (right axis) in Figure~\ref{fig:half_mass} show. On the same figure we also plot the metallicity gradient of the cold gas disk of the main galaxy as a function of time (blue lines, left axis), measured by fitting a straight line to the radial metallicity profile in the radial range $2.5 - 17.5$ kpc. \textbf{We have chosen this radial range such that it encompasses the star forming disk to highlight the effect of gas accretion on the central disk. Note, this radial range is sometimes smaller than the cold gas $R_{\rm half}$ during times of the merger which can be biased high by a non-spherical gas distribution like bridges etc (see e.g. Fig.~XX).} In order to minimize short time scale fluctuations we plot the running average with a window size of 10 corresponding to a time window of $\sim600$~Myr. 
+The sudden increase of gas mass due to these gas rich mergers leads to a sudden increase in the half mass radius ($\gsim20$ kpc) of the cold gas disk of the main galaxy as the orange lines (right axis) in Figure~\ref{fig:half_mass} show. On the same figure we also plot the metallicity gradient of the cold gas disk of the main galaxy as a function of time (blue lines, left axis), measured by fitting a straight line to the radial metallicity profile in the radial range $2.5 - 17.5$ kpc. \textbf{We have chosen this radial range such that it encompasses the star forming disk to highlight the effect of gas accretion on the central disk. Note, this radial range is sometimes smaller than the cold gas $R_{\rm half}$ during times of the merger which can be biased high by a non-spherical gas distribution like bridges etc (see e.g. Fig.~\ref{fig:visu}).} In order to minimize short time scale fluctuations we plot the running average with a window size of 10 corresponding to a time window of $\sim600$~Myr. 
 %One may raise question to whether a linear fit is sufficient during merger events, \cite{Lu2022Rblim} has investigated this and show that after the stellar disk has formed, there always exist a strong linear correlation between [Fe/H] and R.
 
 We find that the time evolution of the metallicity gradient in the galaxies shows a rather complex behaviour. Galaxies g2.79e12 and g8.26e11 show a fast flattening of the initial metallicity gradient at early times ($\lesssim2$ Gyr and $\lesssim 2.5$ Gyr) from initially $-0.08$ dex/kpc to $-0.04$ dex/kpc while g7.55e11 and g7.08e11 start out already with a shallow gradient of $\sim-0.05$ and $\sim-0.04$.
 Common to all four galaxies we find a steepening of the metallicity gradient by at least $0.02$ dex/kpc over a time frame of $\sim1$ Gyr at times where the gas disk size rapidly increases (marked with gray shaded areas) due to the increasing gas mass from the merging satellites. After the steepening happened, the gradient flattens again by $\sim0.01-0.02$ dex/kpc over roughy the same time frame except for g2.79e12 for which the gradient continues to steepen after the merger up to a maximum of $\sim-0.1$ dex/kpc. Only after another $\sim1.5$ Gyr the gradient starts to quickly flatten again until the present day. The late time evolution of the gradient of all four galaxies is comparatively weak but it consistently continues to flatten with at most a decrease of the gradient of $\sim0.02$ dex/kpc over a time of $\sim6-7$ Gyr.
+
+
+\begin{figure*}
+    \begin{centering}
+    \hspace*{.5em} $\mathrm{all\, gas}$ \hspace*{12.5em} $\mathrm{[Fe/H]}>-1$ \hspace*{12.em} $\mathrm{[Fe/H]}<-1$ 
+     \includegraphics[width=.99\linewidth]{figures/frame0019.pdf}
+     %\includegraphics[width=\linewidth]{figures/frame0023.pdf}
+     \includegraphics[width=.99\linewidth]{figures/frame0027.pdf}
+     \includegraphics[width=.99\linewidth]{figures/frame0038.pdf}
+     \includegraphics[width=.99\linewidth]{figures/frame0044.pdf}
+     \vspace*{-1.em}
+     \caption{
+      Visualization of the cold gas surface density in galaxy g2.79e12 during the merger phase ($1.99\, \mathrm{Gyr} < t < 5.10\, \mathrm{Gyr}$; top to bottom, continued in Fig.~\ref{fig:visu2}) where the cold gas half mass radius sharply increases. From left to right we show the total cold gas surface density, the enriched ($\mathrm{[Fe/H]}>-1$) cold gas surface density and the unenriched cold gas ($\mathrm{[Fe/H]}<-1$). In the upper right corner of each panel we show the time and redshift.     
+     }
+     \label{fig:visu}
+    \end{centering}
+\end{figure*}
+
+\begin{figure*}
+    \begin{centering}
+    \hspace*{.5em} $\mathrm{all\, gas}$ \hspace*{12.5em} $\mathrm{[Fe/H]}>-1$ \hspace*{12.em} $\mathrm{[Fe/H]}<-1$ 
+     \includegraphics[width=.99\linewidth]{figures/frame0054.pdf}
+     \includegraphics[width=.99\linewidth]{figures/frame0058.pdf}
+     \includegraphics[width=.99\linewidth]{figures/frame0068.pdf}
+     \includegraphics[width=.99\linewidth]{figures/frame0078.pdf}
+     %\includegraphics[width=\linewidth]{figures/frame0082.pdf}
+     \vspace*{-1.em}
+     \caption{
+     Continuation of Fig.~\ref{fig:visu}.      
+     }
+     \label{fig:visu2}
+    \end{centering}
+\end{figure*}
 
 \subsection{The physical mechanism behind a steepening of the metallicity gradient}
 \label{sec:steepening}
@@ -439,9 +457,11 @@ In fact, as was shown in \citet{Buck2020} in their Fig. 8 scenario (iii) is happ
     \end{centering}
 \end{figure*}
 
-Figure~\ref{fig:feh_evolution} complements our findings from Fig.~\ref{fig:half_mass} and shows that during phases of strong steepening of the metallicity gradient (\textbf{gray shaded areas}) it is especially the outskirts of the galaxies (outside of the solar circle, $R>8$ kpc) that lack behind the central parts in [Fe/H] enrichment. In general, we find that the inner annulus of $3<R<5$ kpc (black line) evolves almost self-similar to the central galaxy and relatively unaffected by the mergers. The outer galaxy annuli (blue, orange and red lines) show strong negative deviations/dips at the times of mergers (compare also to Fig.~\ref{fig:merger_ratio}), or similarly at the times of strong increase in the cold gas half-mass radius (see Fig.~\ref{fig:half_mass}), which indicates that the cold [Fe/H]-enriched gas at these radii is strongly influenced by the more metal-poor gas brought in by the merging dwarf galaxies. We note that after the merger, the elevated star formation in the galaxy outskirts causes these radii to quickly catch up in [Fe/H] enrichment \citep[see also Fig. 7 in][]{Buck2020}.
+Figure~\ref{fig:feh_evolution} complements our findings from Fig.~\ref{fig:half_mass} and shows that during phases of strong steepening of the metallicity gradient (\textbf{gray shaded areas}) it is especially the outskirts of the galaxies (outside of the solar circle, $R>8$ kpc) that lack behind the central parts in [Fe/H] enrichment. In general, we find that the inner annulus of $3<R<5$ kpc (black line) evolves almost self-similar to the central galaxy and relatively unaffected by the mergers. The outer galaxy annuli (blue, orange and red lines) show strong negative deviations/dips at the times of mergers (compare also to Fig.~\ref{fig:merger_ratio}), or similarly at the times of strong increase in the cold gas half-mass radius (see Fig.~\ref{fig:half_mass}), which indicates that the cold [Fe/H]-enriched gas at these radii is strongly influenced by the more metal-poor gas brought in by the merging dwarf galaxies. 
 
-Furthermore, Fig.~\ref{fig:half_mass} also shows that the gradual flattening of the metallicity gradient at late times (second half of the age of the Universe) is mostly caused by preferential/elevated enrichment of the galaxy outside the solar circle. At the same time \cite{Minchev2012a} showed that gas is migrating even stronger than the young stars will do and thus even a small amount of gas migrating outward will bring up $\Delta\rm{[Fe/H]}$ in the outer disk a lot.
+\textbf{We have visualized this quantitative finding from Fig.~\ref{fig:feh_evolution} by plotting the cold gas surface density during the time of the gas rich merger for galaxy g2.79e12 in Fig.~\ref{fig:visu} and Fig.~\ref{fig:visu}. Here we show in the left column the total cold gas surface density and split it into the enriched ($\mathrm{[Fe/H]}>-1$) and an unenriched ($\mathrm{[Fe/H]}<-1$) contribution in the middle and right columns where our separating metallicity of $\mathrm{[Fe/H]}=-1$ is motivated by the shape of the MDF in Fig.~\ref{fig:mdf}. This figure clearly reveals how the merging satellite brings in a huge portion of unenriched cold gas that mainly settles into the outskirts of the pre-existing gas disk as we have seen from Fig.~\ref{fig:feh_evolution}. In total, the elevated, unenriched gas surface in the galaxy's outskirt survives for about 2.5-3 Gyr until its gas is consumed or heated up.}
+
+We note that after the merger, the elevated star formation in the galaxy outskirts causes these radii to quickly catch up in [Fe/H] enrichment \citep[see also Fig. 7 in][]{Buck2020}. Furthermore, Fig.~\ref{fig:half_mass} also shows that the gradual flattening of the metallicity gradient at late times (second half of the age of the Universe) is mostly caused by preferential/elevated enrichment of the galaxy outside the solar circle. At the same time \cite{Minchev2012a} showed that gas is migrating even stronger than the young stars will do and thus even a small amount of gas migrating outward will bring up $\Delta\rm{[Fe/H]}$ in the outer disk a lot.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
