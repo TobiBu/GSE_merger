@@ -1,6 +1,5 @@
-<p align="center">
-    <img width="500", src="https://raw.githubusercontent.com/TobiBu/GSE_merger//video.mp4">
-</p>
+![](https://github.com/TobiBu/GSE_merger/blob/main/src/static/video.mov)
+
 <h2 align="center">The impact of early massive mergers on the chemical evolution of Milky Way-like galaxies: insights from NIHAO-UHD simulations</h2>
 <p align="center">
 <a href="https://github.com/TobiBu/GSE_merger/actions/workflows/build.yml">
