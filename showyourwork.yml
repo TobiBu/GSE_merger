@@ -60,4 +60,4 @@ dependencies:
   src/scripts/feh_ofe.py:
       - src/data/2.79e12_age_fe.dat
   src/scipts/mdf_oxygen.py:
-      - 10.5281/zenodo.7928529
+      - zenodo 10.5281/zenodo.7928529
