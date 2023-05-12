@@ -60,4 +60,11 @@ dependencies:
   src/scripts/feh_ofe.py:
       - src/data/2.79e12_age_fe.dat
   src/scipts/mdf_oxygen.py:
-      - zenodo 10.5281/zenodo.7928529
+      - src/data/2.79e12_time_dict.dat
+      - src/data/2.79e12..00292_halo0_total_age_fe.dat
+      - src/data/2.79e12..00376_halo0_total_age_fe.dat
+      - src/data/2.79e12..01350_halo0_total_age_fe.dat
+      - src/data/2.79e12..00292_halo2_total_age_fe.dat
+      - src/data/2.79e12..00376_halo1_total_age_fe.dat
+      - src/data/2.79e12..00376_halo8_total_age_fe.dat
+      - src/data/2.79e12..01350_halo1_total_age_fe.dat
