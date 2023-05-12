@@ -11,15 +11,6 @@ overleaf:
     - src/tex/ms.tex
     - src/tex/bib.bib
 
-datasets:
-  10.5281/zenodo.7928529:
-    destination: src/data/
-    contents: 
-      2.79e12..01350_halo0_total_age_fe.dat
-  10.5281/zenodo.7224272:
-    contents:
-      2.79e12_age_fe.dat: src/data/2.79e12_age_fe.dat
-
 dependencies:
   src/scripts/merger_ratios.py:
       - src/data/2.79e12_merger_tree_data.dat
@@ -79,3 +70,12 @@ dependencies:
     - src/data/2.79e12..00376_halo1_total_age_fe.dat
     - src/data/2.79e12..00376_halo8_total_age_fe.dat
     - src/data/2.79e12..01350_halo1_total_age_fe.dat
+
+datasets:
+  10.5281/zenodo.7928529:
+    destination: src/data/
+    contents:
+      2.79e12..01350_halo0_total_age_fe.dat
+  10.5281/zenodo.7224272:
+    contents:
+      2.79e12_age_fe.dat: src/data/2.79e12_age_fe.dat
