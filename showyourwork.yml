@@ -1,5 +1,7 @@
 version: 0.3.1.post1
 
+verbose: True
+
 overleaf:
   id: 6347f3e2b7602e1c0ca344ff
   push:
