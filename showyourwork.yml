@@ -30,11 +30,13 @@ dependencies:
       - src/data/7.55e11_time_dict.dat
       - src/data/7.08e11_merger_tree_data.dat
       - src/data/7.08e11_time_dict.dat
+
   src/scripts/half_mass_radius_metal_gradient.py:
       - src/data/2.79e12_time_dict.dat
       - src/data/8.26e11_time_dict.dat
       - src/data/7.55e11_time_dict.dat
       - src/data/7.08e11_time_dict.dat
+
   src/scripts/gas_profile_all.py:
       - src/data/2.79e12.00280_cold_gas_profile.dat
       - src/data/2.79e12.00480_cold_gas_profile.dat
@@ -44,11 +46,13 @@ dependencies:
       - src/data/7.55e11.00520_cold_gas_profile.dat
       - src/data/7.08e11.00256_cold_gas_profile.dat
       - src/data/7.08e11.00356_cold_gas_profile.dat
+
   src/scripts/enrichment_evolution.py:
       - src/data/2.79e12_time_dict.dat
       - src/data/8.26e11_time_dict.dat
       - src/data/7.55e11_time_dict.dat
       - src/data/7.08e11_time_dict.dat
+
   src/scipts/mdf.py:
       - src/data/2.79e12_time_dict.dat
       - src/data/2.79e12..00292_halo0_total_age_fe.dat
@@ -58,17 +62,20 @@ dependencies:
       - src/data/2.79e12..00376_halo1_total_age_fe.dat
       - src/data/2.79e12..00376_halo8_total_age_fe.dat
       - src/data/2.79e12..01350_halo1_total_age_fe.dat 
+
   src/scripts/age_feh.py:
       - src/data/2.79e12_age_fe.dat
+
   src/scripts/feh_ofe.py:
       - src/data/2.79e12_age_fe.dat
+
   src/scipts/mdf_oxygen.py:
-      - src/data/2.79e12..01350_halo0_total_age_fe.dat
-      - src/data/2.79e12_time_dict.dat
-      - src/data/2.79e12..00292_halo0_total_age_fe.dat
-      - src/data/2.79e12..00376_halo0_total_age_fe.dat
-      - src/data/2.79e12..01350_halo0_total_age_fe.dat
-      - src/data/2.79e12..00292_halo2_total_age_fe.dat
-      - src/data/2.79e12..00376_halo1_total_age_fe.dat
-      - src/data/2.79e12..00376_halo8_total_age_fe.dat
-      - src/data/2.79e12..01350_halo1_total_age_fe.dat
+    - src/data/2.79e12..01350_halo0_total_age_fe.dat
+    - src/data/2.79e12_time_dict.dat
+    - src/data/2.79e12..00292_halo0_total_age_fe.dat
+    - src/data/2.79e12..00376_halo0_total_age_fe.dat
+    - src/data/2.79e12..01350_halo0_total_age_fe.dat
+    - src/data/2.79e12..00292_halo2_total_age_fe.dat
+    - src/data/2.79e12..00376_halo1_total_age_fe.dat
+    - src/data/2.79e12..00376_halo8_total_age_fe.dat
+    - src/data/2.79e12..01350_halo1_total_age_fe.dat
