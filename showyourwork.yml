@@ -10,8 +10,9 @@ overleaf:
     - src/tex/bib.bib
 
 datasets:
-  10.5281/zenodo.7928122:
-    destination: src/data
+  10.5281/zenodo.7928529:
+    contents: 
+      2.79e12..01350_halo0_total_age_fe.dat: src/data/2.79e12..01350_halo0_total_age_fe.dat
   10.5281/zenodo.7224272:
     contents:
       2.79e12_age_fe.dat: src/data/2.79e12_age_fe.dat
